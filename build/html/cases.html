@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Case Studies &mdash; PythonWorld 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pygames" href="pygames.html" />
+    <link rel="prev" title="Examples" href="examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modpack.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html#interview-questions">Interview Questions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Case Studies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#speeding-up-api-with-thread-pools">1. Speeding Up API with Thread Pools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#normal-api-request">Normal API Request:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-request-thread-pools">API Request Thread Pools:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pygames.html">Pygames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Case Studies</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/cases.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="case-studies">
+<span id="case"></span><h1>Case Studies<a class="headerlink" href="#case-studies" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="speeding-up-api-with-thread-pools">
+<h2>1. Speeding Up API with Thread Pools<a class="headerlink" href="#speeding-up-api-with-thread-pools" title="Permalink to this headline">¶</a></h2>
+<p><strong>Introduction:</strong></p>
+<ul class="simple">
+<li><p>Application Program Interface (API) Request information server a through calss and to receive valid response.</p></li>
+</ul>
+<p><strong>Challenge:</strong></p>
+<ul class="simple">
+<li><p>Retrieving Huge Amount of Data in Quick time is challenging using multiple API Request</p></li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul class="simple">
+<li><p>Use Thread Pools Library</p></li>
+</ul>
+<p><strong>Setup:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">yahoofinancials</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+<p><strong>Model:</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Free Cash Flow (FCF)</strong></p>
+<div class="math notranslate nohighlight">
+\[FCF = Cash from Operations - Capital Expenditure\]</div>
+</div>
+<div class="section" id="normal-api-request">
+<h3>Normal API Request:<a class="headerlink" href="#normal-api-request" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="_images/api_single.jpg"><img alt="Alternative text" src="_images/api_single.jpg" style="width: 550px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">yahoofinancials</span> <span class="kn">import</span> <span class="n">YahooFinancials</span>
+<span class="hll"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span><span class="c1">#import concurrent.futures</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Normal API Program Started .... Please wait for results ...&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">calculate_fcf</span><span class="p">(</span><span class="n">ticker</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ticker: &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">ticker</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># make yahoofinancials instance</span>
+    <span class="n">yahoo_financials</span> <span class="o">=</span> <span class="n">YahooFinancials</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;yahoofinancials instance got created&quot;</span><span class="p">)</span>
+
+
+    <span class="c1"># get date for the last quarter reported</span>
+<span class="hll">    <span class="n">last_quarter_reported</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">yahoo_financials</span><span class="o">.</span><span class="n">get_financial_stmts</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">,</span> <span class="s1">&#39;cash&#39;</span><span class="p">)[</span><span class="s1">&#39;cashflowStatementHistoryQuarterly&#39;</span><span class="p">][</span><span class="n">ticker</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+</span>
+    <span class="c1"># get total cash from operating activities</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;calculating total from operating activities...&quot;</span><span class="p">)</span>
+    <span class="n">tcfoa</span> <span class="o">=</span> <span class="n">yahoo_financials</span><span class="o">.</span><span class="n">get_financial_stmts</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">,</span> <span class="s1">&#39;cash&#39;</span><span class="p">)[</span><span class="s1">&#39;cashflowStatementHistoryQuarterly&#39;</span><span class="p">][</span><span class="n">ticker</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">last_quarter_reported</span><span class="p">][</span><span class="s1">&#39;totalCashFromOperatingActivities&#39;</span><span class="p">]</span>
+
+    <span class="c1"># get capital expenditures</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;calculating capital expenditures...&quot;</span><span class="p">)</span>
+    <span class="n">capex</span> <span class="o">=</span> <span class="n">yahoo_financials</span><span class="o">.</span><span class="n">get_financial_stmts</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">,</span>  <span class="s1">&#39;cash&#39;</span><span class="p">)[</span><span class="s1">&#39;cashflowStatementHistoryQuarterly&#39;</span><span class="p">][</span><span class="n">ticker</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">last_quarter_reported</span><span class="p">][</span><span class="s1">&#39;capitalExpenditures&#39;</span><span class="p">]</span>
+
+    <span class="c1"># get free cash flow</span>
+    <span class="n">fcf</span> <span class="o">=</span> <span class="n">tcfoa</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">capex</span><span class="p">)</span>
+
+    <span class="c1"># return date of last quarter reported and free cash flow</span>
+    <span class="k">return</span> <span class="n">last_quarter_reported</span><span class="p">,</span> <span class="n">fcf</span>
+
+
+<span class="n">tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NEM&#39;</span><span class="p">,</span> <span class="s1">&#39;FCX&#39;</span><span class="p">,</span> <span class="s1">&#39;BBL&#39;</span><span class="p">,</span> <span class="s1">&#39;GLNCY&#39;</span><span class="p">,</span> <span class="s1">&#39;VALE&#39;</span><span class="p">,</span> <span class="s1">&#39;RTNTF&#39;</span><span class="p">,</span> <span class="s1">&#39;SCCO&#39;</span><span class="p">,</span> <span class="s1">&#39;AU&#39;</span><span class="p">,</span> <span class="s1">&#39;NGLOY&#39;</span><span class="p">,</span> <span class="s1">&#39;HL&#39;</span><span class="p">]</span>  <span class="c1"># ticker list</span>
+<span class="n">quarter_dates</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># list to store quarter dates</span>
+<span class="n">fcfs</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># list to store free cash flows</span>
+<span class="hll"><span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">tickers</span><span class="p">:</span>  <span class="c1"># loop through tickers list</span>
+</span>    <span class="n">calc_fcf</span> <span class="o">=</span> <span class="n">calculate_fcf</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span> <span class="c1"># use function for API request</span>
+    <span class="n">quarter_date</span> <span class="o">=</span> <span class="n">calc_fcf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># get date element from function</span>
+    <span class="n">fcf</span> <span class="o">=</span> <span class="n">calc_fcf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># get fcf element from function</span>
+    <span class="c1"># append results to lists</span>
+    <span class="n">quarter_dates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">quarter_date</span><span class="p">)</span>
+    <span class="n">fcfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fcf</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Free Cash Flow (FCF): &quot;</span><span class="p">,</span><span class="n">fcfs</span><span class="p">)</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time Taken: --- </span><span class="si">%s</span><span class="s2"> seconds ---&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+</span></pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">Normal</span> <span class="n">API</span> <span class="n">Program</span> <span class="n">Started</span> <span class="o">....</span> <span class="n">Please</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">results</span> <span class="o">...</span>
+<span class="hll"> <span class="n">ticker</span><span class="p">:</span>  <span class="n">NEM</span>
+</span> <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">FCX</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">BBL</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">GLNCY</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+<span class="hll"> <span class="n">ticker</span><span class="p">:</span>  <span class="n">VALE</span>
+</span> <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">RTNTF</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">SCCO</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">AU</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">NGLOY</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+<span class="hll"> <span class="n">ticker</span><span class="p">:</span>  <span class="n">HL</span>
+</span> <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+<span class="hll"> <span class="n">Free</span> <span class="n">Cash</span> <span class="n">Flow</span> <span class="p">(</span><span class="n">FCF</span><span class="p">):</span>  <span class="p">[</span><span class="mi">1288000000</span><span class="p">,</span> <span class="mi">939000000</span><span class="p">,</span> <span class="mi">2877500000</span><span class="p">,</span> <span class="mi">406000000</span><span class="p">,</span> <span class="mi">20925000000</span><span class="p">,</span> <span class="mi">3375500000</span><span class="p">,</span> <span class="mi">852100000</span><span class="p">,</span> <span class="mi">245000000</span><span class="p">,</span> <span class="o">-</span><span class="mi">441500000</span><span class="p">,</span> <span class="mi">28267000</span><span class="p">]</span>
+</span><span class="hll"> <span class="n">Time</span> <span class="n">Taken</span><span class="p">:</span> <span class="o">---</span> <span class="mf">73.05337882041931</span> <span class="n">seconds</span> <span class="o">---</span>
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="api-request-thread-pools">
+<h3>API Request Thread Pools:<a class="headerlink" href="#api-request-thread-pools" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="_images/api_multi.jpg"><img alt="Alternative text" src="_images/api_multi.jpg" style="width: 550px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">yahoofinancials</span> <span class="kn">import</span> <span class="n">YahooFinancials</span>
+<span class="hll"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span><span class="hll"><span class="kn">import</span> <span class="nn">concurrent.futures</span>
+</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thread Pool API Program Started .... Please wait for results ...&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">calculate_fcf</span><span class="p">(</span><span class="n">ticker</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ticker: &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">ticker</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># make yahoofinancials instance</span>
+    <span class="n">yahoo_financials</span> <span class="o">=</span> <span class="n">YahooFinancials</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;yahoofinancials instance got created&quot;</span><span class="p">)</span>
+
+
+    <span class="c1"># get date for the last quarter reported</span>
+<span class="hll">    <span class="n">last_quarter_reported</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">yahoo_financials</span><span class="o">.</span><span class="n">get_financial_stmts</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">,</span> <span class="s1">&#39;cash&#39;</span><span class="p">)[</span><span class="s1">&#39;cashflowStatementHistoryQuarterly&#39;</span><span class="p">][</span><span class="n">ticker</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+</span>
+    <span class="c1"># get total cash from operating activities</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;calculating total from operating activities...&quot;</span><span class="p">)</span>
+    <span class="n">tcfoa</span> <span class="o">=</span> <span class="n">yahoo_financials</span><span class="o">.</span><span class="n">get_financial_stmts</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">,</span> <span class="s1">&#39;cash&#39;</span><span class="p">)[</span><span class="s1">&#39;cashflowStatementHistoryQuarterly&#39;</span><span class="p">][</span><span class="n">ticker</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">last_quarter_reported</span><span class="p">][</span><span class="s1">&#39;totalCashFromOperatingActivities&#39;</span><span class="p">]</span>
+
+    <span class="c1"># get capital expenditures</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;calculating capital expenditures...&quot;</span><span class="p">)</span>
+    <span class="n">capex</span> <span class="o">=</span> <span class="n">yahoo_financials</span><span class="o">.</span><span class="n">get_financial_stmts</span><span class="p">(</span><span class="s1">&#39;quarterly&#39;</span><span class="p">,</span>  <span class="s1">&#39;cash&#39;</span><span class="p">)[</span><span class="s1">&#39;cashflowStatementHistoryQuarterly&#39;</span><span class="p">][</span><span class="n">ticker</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">last_quarter_reported</span><span class="p">][</span><span class="s1">&#39;capitalExpenditures&#39;</span><span class="p">]</span>
+
+    <span class="c1"># get free cash flow</span>
+    <span class="n">fcf</span> <span class="o">=</span> <span class="n">tcfoa</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">capex</span><span class="p">)</span>
+
+    <span class="c1"># return date of last quarter reported and free cash flow</span>
+    <span class="k">return</span> <span class="n">last_quarter_reported</span><span class="p">,</span> <span class="n">fcf</span>
+
+<span class="hll"><span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+</span>    <span class="n">tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NEM&#39;</span><span class="p">,</span> <span class="s1">&#39;FCX&#39;</span><span class="p">,</span> <span class="s1">&#39;BBL&#39;</span><span class="p">,</span> <span class="s1">&#39;GLNCY&#39;</span><span class="p">,</span> <span class="s1">&#39;VALE&#39;</span><span class="p">,</span> <span class="s1">&#39;RTNTF&#39;</span><span class="p">,</span> <span class="s1">&#39;SCCO&#39;</span><span class="p">,</span> <span class="s1">&#39;AU&#39;</span><span class="p">,</span> <span class="s1">&#39;NGLOY&#39;</span><span class="p">,</span> <span class="s1">&#39;HL&#39;</span><span class="p">]</span>  <span class="c1"># ticker list</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">calculate_fcf</span><span class="p">,</span> <span class="n">tickers</span><span class="p">)</span> <span class="c1"># map takes the  function and iterables</span>
+    <span class="n">quarter_dates</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># list to store quarter dates</span>
+    <span class="n">fcfs</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># list to store free cash flows</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span> <span class="c1"># loop through results</span>
+        <span class="n">quarter_dates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># append date element</span>
+        <span class="n">fcfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># append fcf element</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Free Cash Flow (FCF): &quot;</span><span class="p">,</span><span class="n">fcfs</span><span class="p">)</span>
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time Taken with ThreadPool: --- </span><span class="si">%s</span><span class="s2"> seconds ---&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+</span></pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">Thread</span> <span class="n">Pool</span> <span class="n">API</span> <span class="n">Program</span> <span class="n">Started</span> <span class="o">....</span> <span class="n">Please</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">results</span> <span class="o">...</span>
+<span class="hll"> <span class="n">ticker</span><span class="p">:</span>  <span class="n">NEM</span>
+</span> <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">FCX</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">BBL</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">GLNCY</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">VALE</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">RTNTF</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">SCCO</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">AU</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+<span class="hll"> <span class="n">ticker</span><span class="p">:</span>  <span class="n">NGLOY</span>
+</span> <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">ticker</span><span class="p">:</span>  <span class="n">HL</span>
+ <span class="n">yahoofinancials</span> <span class="n">instance</span> <span class="n">got</span> <span class="n">created</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+<span class="hll"> <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+</span> <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">total</span> <span class="kn">from</span> <span class="nn">operating</span> <span class="n">activities</span><span class="o">...</span>
+ <span class="n">calculating</span> <span class="n">capital</span> <span class="n">expenditures</span><span class="o">...</span>
+<span class="hll"> <span class="n">Free</span> <span class="n">Cash</span> <span class="n">Flow</span> <span class="p">(</span><span class="n">FCF</span><span class="p">):</span>  <span class="p">[</span><span class="mi">1288000000</span><span class="p">,</span> <span class="mi">939000000</span><span class="p">,</span> <span class="mi">2877500000</span><span class="p">,</span> <span class="mi">406000000</span><span class="p">,</span> <span class="mi">20925000000</span><span class="p">,</span> <span class="mi">3375500000</span><span class="p">,</span> <span class="mi">852100000</span><span class="p">,</span> <span class="mi">245000000</span><span class="p">,</span> <span class="o">-</span><span class="mi">441500000</span><span class="p">,</span> <span class="mi">28267000</span><span class="p">]</span>
+</span><span class="hll"> <span class="n">Time</span> <span class="n">Taken</span> <span class="k">with</span> <span class="n">ThreadPool</span><span class="p">:</span> <span class="o">---</span> <span class="mf">10.280215740203857</span> <span class="n">seconds</span> <span class="o">---</span>
+</span></pre></div>
+</div>
+<p><strong>Using Pandas:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Ticker&#39;</span><span class="p">:</span> <span class="n">tickers</span><span class="p">,</span><span class="s1">&#39;Last quarter reported&#39;</span><span class="p">:</span> <span class="n">quarter_dates</span><span class="p">,</span> <span class="s1">&#39;Free Cash Flow&#39;</span><span class="p">:</span> <span class="n">fcfs</span><span class="p">})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Free Cash Flow&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Free Cash Flow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Free Cash Flow&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000000000</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Free Cash Flow&#39;</span><span class="p">:</span> <span class="s1">&#39;Free Cash Flow (billions $)&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p><strong>Results Table:</strong></p>
+<a class="reference internal image-reference" href="_images/result_table.jpg"><img alt="Alternative text" src="_images/result_table.jpg" style="width: 550px;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pygames.html" class="btn btn-neutral float-right" title="Pygames" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="examples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

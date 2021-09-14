@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Functions &mdash; PythonWorld 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modules and Packages" href="modpack.html" />
+    <link rel="prev" title="Loops" href="loops.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#categories-of-functions">Categories of Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pass-by-reference-vs-pass-by-value">Pass by Reference vs Pass by Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#function-arguments">Function Arguments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#required-arguments">1. Required arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keyword-arguments">2. Keyword arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#default-arguments">3. Default arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variable-length-arguments">4. Variable-length arguments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modpack.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html#interview-questions">Interview Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pygames.html">Pygames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/functions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="functions">
+<span id="func"></span><h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="categories-of-functions">
+<h2>Categories of Functions<a class="headerlink" href="#categories-of-functions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Takes Something Returns Something.</p></li>
+<li><p>Takes Something Returns Nothing</p></li>
+<li><p>Takes Nothing Returns Nothing</p></li>
+<li><p>Takes Nothing Returns Nothing</p></li>
+</ol>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_name</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+   <span class="s2">&quot;function docstring&quot;</span>
+    <span class="n">function_suite</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+   <span class="s2">&quot;this function prints Hello Python&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="k">return</span>
+
+<span class="n">Call</span> <span class="n">a</span> <span class="n">function</span>
+<span class="c1"># Now you can call printme function</span>
+<span class="n">myfunc</span><span class="p">(</span><span class="s2">&quot;This is &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="pass-by-reference-vs-pass-by-value">
+<h3>Pass by Reference vs Pass by Value<a class="headerlink" href="#pass-by-reference-vs-pass-by-value" title="Permalink to this headline">¶</a></h3>
+<p>Example 1:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="c1"># Function definition is here</span>
+<span class="k">def</span> <span class="nf">mychange</span><span class="p">(</span> <span class="n">mylist</span> <span class="p">):</span>
+   <span class="s2">&quot;This changes a passed list into this function&quot;</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Values inside the function before change: &quot;</span><span class="p">,</span> <span class="n">mylist</span><span class="p">)</span>
+
+   <span class="n">mylist</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">5</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Values inside the function after change: &quot;</span><span class="p">,</span> <span class="n">mylist</span><span class="p">)</span>
+   <span class="k">return</span>
+
+<span class="c1"># Now you can call mychange function</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">mychange</span><span class="p">(</span> <span class="n">mylist</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Values outside the function: &quot;</span><span class="p">,</span> <span class="n">mylist</span><span class="p">)</span>
+
+<span class="n">Output</span><span class="p">:</span>
+<span class="n">Values</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">function</span> <span class="n">before</span> <span class="n">change</span><span class="p">:</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">Values</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">function</span> <span class="n">after</span> <span class="n">change</span><span class="p">:</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">Values</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">function</span><span class="p">:</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example 2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="c1"># Function definition is here</span>
+<span class="k">def</span> <span class="nf">mychange</span><span class="p">(</span> <span class="n">mylist</span> <span class="p">):</span>
+   <span class="s2">&quot;This changes a passed list into this function&quot;</span>
+   <span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="c1"># This would assi new reference in mylist</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Values inside the function: &quot;</span><span class="p">,</span> <span class="n">mylist</span><span class="p">)</span>
+   <span class="k">return</span>
+
+<span class="c1"># Now you can call mychange function</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">mychange</span><span class="p">(</span> <span class="n">mylist</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Values outside the function: &quot;</span><span class="p">,</span> <span class="n">mylist</span><span class="p">)</span>
+
+<span class="n">Output</span><span class="p">:</span>
+<span class="n">Values</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">function</span><span class="p">:</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Values</span> <span class="n">outside</span> <span class="n">the</span> <span class="n">function</span><span class="p">:</span>  <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="function-arguments">
+<h2>Function Arguments<a class="headerlink" href="#function-arguments" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Required arguments</p></li>
+<li><p>Keyword arguments</p></li>
+<li><p>Default arguments</p></li>
+<li><p>Variable-length arguments</p></li>
+</ol>
+<div class="section" id="required-arguments">
+<h3>1. Required arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+    <span class="c1"># Function definition is here</span>
+    <span class="k">def</span> <span class="nf">printme</span><span class="p">(</span> <span class="nb">str</span> <span class="p">):</span>
+       <span class="s2">&quot;This prints a passed string into this function&quot;</span>
+       <span class="nb">print</span> <span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+       <span class="k">return</span>
+
+    <span class="c1"># Now you can call printme function</span>
+    <span class="n">printme</span><span class="p">()</span>
+
+<span class="n">Output</span><span class="p">:</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+   <span class="n">File</span> <span class="s2">&quot;test.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">11</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+      <span class="n">printme</span><span class="p">();</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">printme</span><span class="p">()</span> <span class="n">takes</span> <span class="n">exactly</span> <span class="mi">1</span> <span class="n">argument</span> <span class="p">(</span><span class="mi">0</span> <span class="n">given</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="keyword-arguments">
+<h3>2. Keyword arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">¶</a></h3>
+<p>Example 1:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="c1"># Function definition is here</span>
+<span class="k">def</span> <span class="nf">printme</span><span class="p">(</span> <span class="nb">str</span> <span class="p">):</span>
+   <span class="s2">&quot;This prints a passed string into this function&quot;</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+   <span class="k">return</span>
+
+<span class="c1"># Now you can call printme function</span>
+<span class="n">printme</span><span class="p">(</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Hello Python&quot;</span><span class="p">)</span>
+
+<span class="n">Output</span><span class="p">:</span>
+<span class="n">Hello</span> <span class="n">Python</span>
+</pre></div>
+</div>
+<p>Example 2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+ <span class="c1"># Function definition is here</span>
+ <span class="k">def</span> <span class="nf">printinfo</span><span class="p">(</span> <span class="n">name</span><span class="p">,</span> <span class="n">marks</span> <span class="p">):</span>
+    <span class="s2">&quot;This prints a passed info into this function&quot;</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Name: &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Marks &quot;</span><span class="p">,</span> <span class="n">marks</span><span class="p">)</span>
+    <span class="k">return</span>
+
+ <span class="c1"># Now you can call printinfo function</span>
+ <span class="n">printinfo</span><span class="p">(</span> <span class="n">marks</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Saurabh&quot;</span> <span class="p">)</span>
+
+ <span class="n">Output</span><span class="p">:</span>
+ <span class="n">Name</span><span class="p">:</span>  <span class="n">Saurabh</span>
+ <span class="n">Age</span>  <span class="mi">90</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="default-arguments">
+<h3>3. Default arguments<a class="headerlink" href="#default-arguments" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="c1"># Function definition is here</span>
+<span class="k">def</span> <span class="nf">printinfo</span><span class="p">(</span> <span class="n">name</span><span class="p">,</span> <span class="n">marks</span> <span class="o">=</span> <span class="mi">35</span> <span class="p">):</span>
+   <span class="s2">&quot;This prints a passed info into this function&quot;</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Name: &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Marks &quot;</span><span class="p">,</span> <span class="n">marks</span><span class="p">)</span>
+   <span class="k">return</span>
+
+<span class="c1"># Now you can call printinfo function</span>
+<span class="n">printinfo</span><span class="p">(</span> <span class="n">marks</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;saurabh&quot;</span> <span class="p">)</span>
+<span class="n">printinfo</span><span class="p">(</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;James&quot;</span> <span class="p">)</span>
+
+<span class="n">Output</span><span class="p">:</span>
+<span class="n">Name</span><span class="p">:</span>  <span class="n">Saurabh</span>
+<span class="n">Marks</span>  <span class="mi">50</span>
+<span class="n">Name</span><span class="p">:</span>  <span class="n">James</span>
+<span class="n">Marks</span>  <span class="mi">35</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-length-arguments">
+<h3>4. Variable-length arguments<a class="headerlink" href="#variable-length-arguments" title="Permalink to this headline">¶</a></h3>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">functionname</span><span class="p">([</span><span class="n">formal_args</span><span class="p">,]</span> <span class="o">*</span><span class="n">var_args_tuple</span> <span class="p">):</span>
+   <span class="s2">&quot;function_docstring&quot;</span>
+   <span class="n">function_suite</span>
+   <span class="k">return</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="c1"># Function definition is here</span>
+<span class="k">def</span> <span class="nf">printinfo</span><span class="p">(</span> <span class="n">arg1</span><span class="p">,</span> <span class="o">*</span><span class="n">vartuple</span> <span class="p">):</span>
+   <span class="s2">&quot;This prints a variable passed arguments&quot;</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Output is: &quot;</span><span class="p">)</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="n">arg1</span><span class="p">)</span>
+
+   <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">vartuple</span><span class="p">:</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="n">var</span><span class="p">)</span>
+   <span class="k">return</span>
+
+<span class="c1"># Now you can call printinfo function</span>
+<span class="n">printinfo</span><span class="p">(</span> <span class="mi">10</span> <span class="p">)</span>
+<span class="n">printinfo</span><span class="p">(</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">70</span> <span class="p">)</span>
+
+<span class="n">Output</span> <span class="ow">is</span><span class="p">:</span>
+<span class="mi">10</span>
+<span class="n">Output</span> <span class="ow">is</span><span class="p">:</span>
+<span class="mi">90</span>
+<span class="mi">80</span>
+<span class="mi">70</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modpack.html" class="btn btn-neutral float-right" title="Modules and Packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="loops.html" class="btn btn-neutral float-left" title="Loops" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Types &mdash; PythonWorld 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Conditions" href="condition.html" />
+    <link rel="prev" title="Python Intro" href="intpy.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#number">1. Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#strings">2. Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lists">3. Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tuple">4. Tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dictionary">5. Dictionary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modpack.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html#interview-questions">Interview Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pygames.html">Pygames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Data Types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/datatypes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-types">
+<span id="datatyp"></span><h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="number">
+<h2>1. Number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Types of Number</p>
+<ul class="simple">
+<li><p>int (signed integers)</p></li>
+<li><p>float (floating point real values)</p></li>
+<li><p>complex (complex numbers)</p></li>
+</ul>
+</div>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Example</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>int</p></th>
+<th class="head"><p>float</p></th>
+<th class="head"><p>complex</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>5.5</p></td>
+<td><p>2+4j</p></td>
+</tr>
+<tr class="row-odd"><td><p>-100</p></td>
+<td><p>8.5555</p></td>
+<td><p>-i+2j</p></td>
+</tr>
+</tbody>
+</table>
+<p>How to Assign Numbers</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>How to Access Numbers</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mf">5.5</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;num1 integer: &quot;</span><span class="p">,</span> <span class="n">num1</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;num2 float: &quot;</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;num3 complex: &quot;</span><span class="p">,</span> <span class="n">num3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num1</span> <span class="n">integer</span><span class="p">:</span>  <span class="mi">10</span>
+<span class="n">num2</span> <span class="nb">float</span><span class="p">:</span>  <span class="mf">5.5</span>
+<span class="n">num3</span> <span class="nb">complex</span><span class="p">:</span>  <span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="strings">
+<h2>2. Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+<p>How to Assign Strings</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mystr</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span>
+</pre></div>
+</div>
+<p>How to Access Strings</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mystr</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mystr[0]: &quot;</span><span class="p">,</span> <span class="n">mystr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mystr[1:5]: &quot;</span><span class="p">,</span> <span class="n">mystr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mystr[:] &quot;</span><span class="p">,</span> <span class="n">mystr</span><span class="p">[:])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mystr[::]: &quot;</span><span class="p">,</span> <span class="n">mystr</span><span class="p">[::])</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mystr</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>  <span class="n">p</span>
+<span class="n">mystr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span>  <span class="n">ytho</span>
+<span class="n">mystr</span><span class="p">[:]:</span>  <span class="n">python</span>
+<span class="n">mystr</span><span class="p">[::]:</span>  <span class="n">python</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lists">
+<h2>3. Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p>How to Assign List</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span><span class="s1">&#39;saurabh&#39;</span><span class="p">,</span><span class="s1">&#39;100&#39;</span><span class="p">,</span><span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>How to Access List</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span><span class="s1">&#39;saurabh&#39;</span><span class="p">,</span><span class="s1">&#39;100&#39;</span><span class="p">,</span><span class="kc">True</span><span class="p">]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mylist[0]: &quot;</span><span class="p">,</span> <span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mylist[1:5]: &quot;</span><span class="p">,</span> <span class="n">mylist</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mylist[:]: &quot;</span><span class="p">,</span> <span class="n">mylist</span><span class="p">[:])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mylist[::]: &quot;</span><span class="p">,</span> <span class="n">mylist</span><span class="p">[::])</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>  <span class="n">python</span>
+<span class="n">mylist</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s1">&#39;saurabh&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">]</span>
+<span class="n">mylist</span><span class="p">[:]:</span>  <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s1">&#39;saurabh&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="n">mylist</span><span class="p">[::]:</span>  <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s1">&#39;saurabh&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tuple">
+<h2>4. Tuple<a class="headerlink" href="#tuple" title="Permalink to this headline">¶</a></h2>
+<p>How to Assign List</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span><span class="s1">&#39;saurabh&#39;</span><span class="p">,</span><span class="s1">&#39;100&#39;</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>How to Access List</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span><span class="s1">&#39;saurabh&#39;</span><span class="p">,</span><span class="s1">&#39;100&#39;</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mytuple[0]: &quot;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mytuple[1:5]: &quot;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mytuple[:]: &quot;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">[:])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mytuple[::]: &quot;</span><span class="p">,</span> <span class="n">mytuple</span><span class="p">[::])</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>  <span class="n">python</span>
+<span class="n">mytuple</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s1">&#39;saurabh&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">)</span>
+<span class="n">mytuple</span><span class="p">[:]:</span>  <span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s1">&#39;saurabh&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">mytuple</span><span class="p">[::]:</span>  <span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="s1">&#39;saurabh&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dictionary">
+<h2>5. Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h2>
+<p>How to Assign Dictionary</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s1">&#39;Saurabh&#39;</span><span class="p">,</span><span class="s1">&#39;Marks&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span><span class="s1">&#39;Subjects&#39;</span><span class="p">:[</span><span class="s1">&#39;Maths&#39;</span><span class="p">,</span><span class="s1">&#39;Science&#39;</span><span class="p">]}</span>
+</pre></div>
+</div>
+<p>How to Access Dictionary</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s1">&#39;Saurabh&#39;</span><span class="p">,</span><span class="s1">&#39;Marks&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span><span class="s1">&#39;Subjects&#39;</span><span class="p">:[</span><span class="s1">&#39;Maths&#39;</span><span class="p">,</span><span class="s1">&#39;Science&#39;</span><span class="p">]}</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mydict[&#39;Name&#39;]: &quot;</span><span class="p">,</span> <span class="n">mydict</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mydict[&#39;Marks&#39;]: &quot;</span><span class="p">,</span> <span class="n">mydict</span><span class="p">[</span><span class="s1">&#39;Marks&#39;</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mydict[&#39;Subjects&#39;]: &quot;</span><span class="p">,</span> <span class="n">mydict</span><span class="p">[</span><span class="s1">&#39;Subjects&#39;</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;mydict: &quot;</span><span class="p">,</span> <span class="n">mydict</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mydict</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]:</span>  <span class="n">Saurabh</span>
+<span class="n">mydict</span><span class="p">[</span><span class="s1">&#39;Marks&#39;</span><span class="p">]:</span>  <span class="mi">90</span>
+<span class="n">mydict</span><span class="p">[</span><span class="s1">&#39;Subjects&#39;</span><span class="p">]:</span>  <span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">,</span> <span class="s1">&#39;Science&#39;</span><span class="p">]</span>
+<span class="n">mydict</span><span class="p">:</span>  <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saurabh&#39;</span><span class="p">,</span> <span class="s1">&#39;Marks&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;Subjects&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">,</span> <span class="s1">&#39;Science&#39;</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="condition.html" class="btn btn-neutral float-right" title="Conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intpy.html" class="btn btn-neutral float-left" title="Python Intro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

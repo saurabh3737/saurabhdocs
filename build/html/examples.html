@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Examples &mdash; PythonWorld 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Case Studies" href="cases.html" />
+    <link rel="prev" title="Utilities" href="utilities.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modpack.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#palindrome">1. Palindrome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#even-odd">2. Even-Odd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#factorials">3. Factorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prime-numbers">4. Prime Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fibonacci-sequence">5. Fibonacci Sequence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#armstrong-number">6. Armstrong Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transpose-a-matrix">7. Transpose a Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#interview-questions">Interview Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#descriptive">Descriptive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mcq">MCQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pygames.html">Pygames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="examples">
+<span id="example"></span><h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="palindrome">
+<h2>1. Palindrome<a class="headerlink" href="#palindrome" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Check whether given string is Palindrome or not</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Python Program to Check Whether a String is Palindrome or Not&quot;&quot;&quot;</span>
+<span class="c1"># Program to check if a string is palindrome or not</span>
+<span class="c1"># 1) Find reverse of string</span>
+<span class="c1"># 2) Check if reverse and original are same or not</span>
+<span class="c1"># Driver code</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;malayalam&quot;</span>
+<span class="hll"><span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string is a palindrome.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string is not a palindrome.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="even-odd">
+<h2>2. Even-Odd<a class="headerlink" href="#even-odd" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Check Given Number is Even or Odd</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Python Program to Check if a Number is Odd or Even&quot;&quot;&quot;</span>
+<span class="c1"># Python program to check if the input number is odd or even.</span>
+<span class="c1"># A number is even if division by 2 gives a remainder of 0.</span>
+<span class="c1"># If the remainder is 1, it is an odd number.</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
+<span class="hll"><span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> is Even&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> is Odd&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="factorials">
+<h2>3. Factorials<a class="headerlink" href="#factorials" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Calculate Factorial of a Given Number</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Python Program to Find the Factorial of a Number&quot;&quot;&quot;</span>
+<span class="c1"># Python program to find the factorial of a number provided by the user.</span>
+
+<span class="c1"># change the value for a different result</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="c1"># To take input from the user</span>
+<span class="c1"># num = int(input(&quot;Enter a number: &quot;))</span>
+
+<span class="n">factorial</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># check if the number is negative, positive or zero</span>
+<span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, factorial does not exist for negative numbers&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The factorial of 0 is 1&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="hll">        <span class="n">factorial</span> <span class="o">=</span> <span class="n">factorial</span> <span class="o">*</span> <span class="n">i</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The factorial of&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">factorial</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="prime-numbers">
+<h2>4. Prime Numbers<a class="headerlink" href="#prime-numbers" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Check Number is Prime or Not</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Python Program to Check Prime Number&quot;&quot;&quot;</span>
+
+<span class="c1"># Program to check if a number is prime or not</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="mi">307</span>
+
+<span class="c1"># To take input from the user</span>
+<span class="c1"># num = int(input(&quot;Enter a number: &quot;))</span>
+<span class="c1"># prime numbers are greater than 1</span>
+<span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="c1"># check for factors</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+<span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s2">&quot;is not a prime number&quot;</span><span class="p">)</span>
+</span>            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;times&quot;</span><span class="p">,</span> <span class="n">num</span> <span class="o">//</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s2">&quot;is a prime number&quot;</span><span class="p">)</span>
+
+<span class="c1"># if input number is less than</span>
+<span class="c1"># or equal to 1, it is not prime</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s2">&quot;is not a prime number&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="lowerroman simple" start="2">
+<li><p>Generate Prime Numbers between 1 to 100</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Python Program to Print all Prime Numbers in an Interval&quot;&quot;&quot;</span>
+<span class="c1"># Python program to display all the prime numbers within an interval</span>
+
+<span class="n">lower</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">upper</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prime numbers between&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="s2">&quot;are:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># all prime numbers are greater than 1</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fibonacci-sequence">
+<h2>5. Fibonacci Sequence<a class="headerlink" href="#fibonacci-sequence" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Print Fibonacci sequence for a given range</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Python Program to Print the Fibonacci sequence&quot;&quot;&quot;</span>
+<span class="c1"># Program to display the Fibonacci sequence up to n-th term</span>
+
+<span class="n">nterms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many terms? &quot;</span><span class="p">))</span>
+
+<span class="c1"># first two terms</span>
+<span class="n">n1</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># check if the number of terms is valid</span>
+<span class="k">if</span> <span class="n">nterms</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please enter a positive integer&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">nterms</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fibonacci sequence upto&quot;</span><span class="p">,</span><span class="n">nterms</span><span class="p">,</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fibonacci sequence:&quot;</span><span class="p">)</span>
+   <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">nterms</span><span class="p">:</span>
+       <span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+       <span class="n">nth</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span>
+       <span class="c1"># update values</span>
+       <span class="n">n1</span> <span class="o">=</span> <span class="n">n2</span>
+       <span class="n">n2</span> <span class="o">=</span> <span class="n">nth</span>
+       <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="armstrong-number">
+<h2>6. Armstrong Number<a class="headerlink" href="#armstrong-number" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Check Give number is Armstrong Number or not</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Python Program to Check Armstrong Number&quot;&quot;&quot;</span>
+<span class="c1"># abcd... = an + bn + cn + dn + ...</span>
+<span class="c1"># 153 = 1*1*1 + 5*5*5 + 3*3*3  // 153 is an Armstrong number.</span>
+<span class="c1"># 407</span>
+<span class="sd">&quot;&quot;&quot;Source Code: Check Armstrong number (for 3 digits)&quot;&quot;&quot;</span>
+<span class="c1"># Python program to check if the number is an Armstrong number or not</span>
+
+<span class="c1"># take input from the user</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
+
+<span class="c1"># initialize sum</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># find the sum of the cube of each digit</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">num</span>
+<span class="k">while</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="n">digit</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">%</span> <span class="mi">10</span>
+   <span class="nb">sum</span> <span class="o">+=</span> <span class="n">digit</span> <span class="o">**</span> <span class="mi">3</span>
+   <span class="n">temp</span> <span class="o">//=</span> <span class="mi">10</span>
+
+<span class="c1"># display the result</span>
+<span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="s2">&quot;is an Armstrong number&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="s2">&quot;is not an Armstrong number&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transpose-a-matrix">
+<h2>7. Transpose a Matrix<a class="headerlink" href="#transpose-a-matrix" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Python Program to Transpose a Matrix</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Python Program to Transpose a Matrix&quot;&quot;&quot;</span>
+<span class="c1"># Program to transpose a matrix using a nested loop</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span> <span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span> <span class="p">,</span><span class="mi">8</span><span class="p">]]</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="c1"># iterate through rows</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)):</span>
+   <span class="c1"># iterate through columns</span>
+   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+       <span class="n">result</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="interview-questions">
+<h1>Interview Questions<a class="headerlink" href="#interview-questions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="descriptive">
+<h2>Descriptive<a class="headerlink" href="#descriptive" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Why is Python Preferred over JAVA or C++?</p></li>
+<li><p>What is the difference between module and package in python?</p></li>
+<li><p>How can I run a function over a list of items?</p></li>
+<li><p>How to find address of a variable?</p></li>
+<li><p>What is list comprehension and dictionary comprehension?</p></li>
+<li><p>How to avoid redundancy of items in a list?</p></li>
+<li><p>What is the difference between list and tuple?</p></li>
+<li><p>What is a Lambda function? What is the return type of it?</p></li>
+<li><p>What is a Pickle and its utility?</p></li>
+<li><p>Give the difference between range and xrange?</p></li>
+<li><p>Give difference between Iterators and Generator?</p></li>
+<li><p>What are decorators and there utility?</p></li>
+<li><p>Which is faster List and Tuple and why?</p></li>
+<li><p>Python follows depth first search or breadth first search algorithm, with example?</p></li>
+<li><p>What is slicing and negative Indexing?</p></li>
+<li><p>What is the difference between Static Methods and Class Method?</p></li>
+<li><p>Write a program for traversing binary tree in Python?</p></li>
+<li><p>Write a program for checking number is Prime or not?</p></li>
+<li><p>How Zip, Map, Reduce and filter is used?</p></li>
+<li><p>How to connect databases with Python?</p></li>
+</ol>
+</div>
+<div class="section" id="mcq">
+<h2>MCQ<a class="headerlink" href="#mcq" title="Permalink to this headline">¶</a></h2>
+<p>Comming Soon…</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cases.html" class="btn btn-neutral float-right" title="Case Studies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="utilities.html" class="btn btn-neutral float-left" title="Utilities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

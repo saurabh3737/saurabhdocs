@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'pythontutorials'
+project = 'PythonWorld'
 copyright = '2020, Saurabh Jaiswal'
 author = 'Saurabh Jaiswal'
 

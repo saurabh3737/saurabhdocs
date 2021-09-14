@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Classes and Objects &mdash; PythonWorld 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Iterators &amp; Generators" href="iterator.html" />
+    <link rel="prev" title="Modules and Packages" href="modpack.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modpack.html">Modules and Packages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classes and Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-classes">Creating Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-instances">Creating Instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-attributes">Accessing Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#built-in-class-attributes">Built-In Class Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-inheritance">Class Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-inheritance">Multiple Inheritance:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overriding-methods">Overriding Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#magic-methods">Magic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overloading-operators">Overloading Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html#interview-questions">Interview Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pygames.html">Pygames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Classes and Objects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/class.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="classes-and-objects">
+<span id="cls"></span><h1>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creating-classes">
+<h2>Creating Classes<a class="headerlink" href="#creating-classes" title="Permalink to this headline">¶</a></h2>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassName</span><span class="p">:</span>
+   <span class="s1">&#39;Optional class documentation string&#39;</span>
+   <span class="n">class_suite</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+   <span class="s1">&#39;Common base class for all students&#39;</span>
+   <span class="n">studCount</span> <span class="o">=</span> <span class="mi">0</span>
+
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">marks</span> <span class="o">=</span> <span class="n">marks</span>
+      <span class="n">Student</span><span class="o">.</span><span class="n">studCount</span> <span class="o">+=</span> <span class="mi">1</span>
+
+   <span class="k">def</span> <span class="nf">displayCount</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Total Student </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Student</span><span class="o">.</span><span class="n">studCount</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="nf">displayStudent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Name : &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>  <span class="s2">&quot;, Marks: &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marks</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-instances">
+<h2>Creating Instances<a class="headerlink" href="#creating-instances" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">would</span> <span class="n">create</span> <span class="n">first</span> <span class="nb">object</span> <span class="n">of</span> <span class="n">Student</span> <span class="k">class</span>
+<span class="nc">stud1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Saurabh&quot;</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+<span class="n">This</span> <span class="n">would</span> <span class="n">create</span> <span class="n">second</span> <span class="nb">object</span> <span class="n">of</span> <span class="n">Student</span> <span class="k">class</span>
+<span class="nc">stud2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;SJ&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-attributes">
+<h2>Accessing Attributes<a class="headerlink" href="#accessing-attributes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stud1</span><span class="o">.</span><span class="n">displayStudent</span><span class="p">()</span>
+<span class="n">stud2</span><span class="o">.</span><span class="n">displayStudent</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Total Student </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Student</span><span class="o">.</span><span class="n">studCount</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Complete Program</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+   <span class="s1">&#39;Common base class for all students&#39;</span>
+   <span class="n">studCount</span> <span class="o">=</span> <span class="mi">0</span>
+
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">marks</span> <span class="o">=</span> <span class="n">marks</span>
+      <span class="n">Student</span><span class="o">.</span><span class="n">studCount</span> <span class="o">+=</span> <span class="mi">1</span>
+
+   <span class="k">def</span> <span class="nf">displayCount</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Total Student </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Student</span><span class="o">.</span><span class="n">studCount</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="nf">displayStudent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Name : &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>  <span class="s2">&quot;, Marks: &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marks</span><span class="p">)</span>
+
+<span class="c1">#This would create first object of Student class</span>
+<span class="n">stud1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Saurabh&quot;</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+<span class="c1">#This would create second object of Student class</span>
+<span class="n">stud2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;SJ&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="n">stud1</span><span class="o">.</span><span class="n">displayStudent</span><span class="p">()</span>
+<span class="n">stud2</span><span class="o">.</span><span class="n">displayStudent</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Total Student </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Student</span><span class="o">.</span><span class="n">studCount</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="p">:</span>  <span class="n">Saurabh</span> <span class="p">,</span> <span class="n">Marks</span><span class="p">:</span>  <span class="mi">75</span>
+<span class="n">Name</span> <span class="p">:</span>  <span class="n">SJ</span> <span class="p">,</span> <span class="n">Marks</span><span class="p">:</span>  <span class="mi">90</span>
+<span class="n">Total</span> <span class="n">Student</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="built-in-class-attributes">
+<h2>Built-In Class Attributes<a class="headerlink" href="#built-in-class-attributes" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><em>__dict__</em> − Dictionary containing the class’s namespace.</p></li>
+<li><p><em>__doc__</em> − Class documentation string or none, if undefined.</p></li>
+<li><p><em>__name__</em> − Class name.</p></li>
+<li><p><em>__module__</em> − Module name in which the class is defined. This attribute is “__main__” in interactive mode.</p></li>
+<li><p><em>__bases__</em> − empty tuple containing the base classes.</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+   <span class="s1">&#39;Common base class for all students&#39;</span>
+   <span class="n">studCount</span> <span class="o">=</span> <span class="mi">0</span>
+
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">marks</span> <span class="o">=</span> <span class="n">marks</span>
+      <span class="n">Student</span><span class="o">.</span><span class="n">studCount</span> <span class="o">+=</span> <span class="mi">1</span>
+
+   <span class="k">def</span> <span class="nf">displayCount</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Total Student </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Student</span><span class="o">.</span><span class="n">studCount</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="nf">displayStudent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Name : &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>  <span class="s2">&quot;, Marks: &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marks</span><span class="p">)</span>
+
+<span class="c1">#This would create first object of Student class</span>
+<span class="n">stud1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Saurabh&quot;</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+<span class="c1">#This would create second object of Student class</span>
+<span class="n">stud2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;SJ&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="n">stud1</span><span class="o">.</span><span class="n">displayStudent</span><span class="p">()</span>
+<span class="n">stud2</span><span class="o">.</span><span class="n">displayStudent</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Total Student </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Student</span><span class="o">.</span><span class="n">studCount</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Student.__doc__:&quot;</span><span class="p">,</span> <span class="n">Student</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Student.__name__:&quot;</span><span class="p">,</span> <span class="n">Student</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Student.__module__:&quot;</span><span class="p">,</span> <span class="n">Student</span><span class="o">.</span><span class="vm">__module__</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Student.__bases__:&quot;</span><span class="p">,</span> <span class="n">Student</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Student.__dict__:&quot;</span><span class="p">,</span> <span class="n">Student</span><span class="o">.</span><span class="vm">__dict__</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Student.__doc__: Common base class for all students
+Student.__name__: Student
+Student.__module__: __main__
+Student.__bases__: (&lt;class &#39;object&#39;&gt;,)
+Student.__dict__: {&#39;__module__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: &#39;Common base class for all students&#39;, &#39;studCount&#39;: 2, &#39;__init__&#39;: &lt;function Student.__init__ at 0x015993D0&gt;, &#39;displayCount&#39;: &lt;function Student.displayCount at 0x01599388&gt;, &#39;displayStudent&#39;: &lt;function Student.displayStudent at 0x01599340&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Student&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Student&#39; objects&gt;}
+</pre></div>
+</div>
+</div>
+<div class="section" id="class-inheritance">
+<h2>Class Inheritance<a class="headerlink" href="#class-inheritance" title="Permalink to this headline">¶</a></h2>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SubClassName</span> <span class="p">(</span><span class="n">ParentClass1</span><span class="p">[,</span> <span class="n">ParentClass2</span><span class="p">,</span> <span class="o">...</span><span class="p">]):</span>
+   <span class="s1">&#39;Optional class documentation string&#39;</span>
+   <span class="n">class_suite</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>        <span class="c1"># define parent class</span>
+   <span class="n">parentAttr</span> <span class="o">=</span> <span class="mi">10</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Calling parent constructor&quot;</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="nf">parentMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Calling parent method&#39;</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="nf">setAttr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+      <span class="n">Parent</span><span class="o">.</span><span class="n">parentAttr</span> <span class="o">=</span> <span class="n">attr</span>
+
+   <span class="k">def</span> <span class="nf">getAttr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Parent attribute :&quot;</span><span class="p">,</span> <span class="n">Parent</span><span class="o">.</span><span class="n">parentAttr</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span> <span class="c1"># define child class</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Calling child constructor&quot;</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="nf">childMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Calling child method&#39;</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>          <span class="c1"># instance of child</span>
+<span class="n">c</span><span class="o">.</span><span class="n">childMethod</span><span class="p">()</span>      <span class="c1"># child calls its method</span>
+<span class="n">c</span><span class="o">.</span><span class="n">parentMethod</span><span class="p">()</span>     <span class="c1"># calls parent&#39;s method</span>
+<span class="n">c</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>       <span class="c1"># again call parent&#39;s method</span>
+<span class="n">c</span><span class="o">.</span><span class="n">getAttr</span><span class="p">()</span>          <span class="c1"># again call parent&#39;s method</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Calling</span> <span class="n">child</span> <span class="n">constructor</span>
+<span class="n">Calling</span> <span class="n">child</span> <span class="n">method</span>
+<span class="n">Calling</span> <span class="n">parent</span> <span class="n">method</span>
+<span class="n">Parent</span> <span class="n">attribute</span> <span class="p">:</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multiple-inheritance">
+<h2>Multiple Inheritance:<a class="headerlink" href="#multiple-inheritance" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>        <span class="c1"># define your class A</span>
+<span class="o">.....</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">:</span>         <span class="c1"># define your calss B</span>
+<span class="o">.....</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>   <span class="c1"># subclass of A and B</span>
+<span class="o">.....</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>issubclass(sub, sup)</p></li>
+<li><p>isinstance(obj, Class)</p></li>
+</ul>
+</div>
+<div class="section" id="overriding-methods">
+<h2>Overriding Methods<a class="headerlink" href="#overriding-methods" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>        <span class="c1"># define parent class</span>
+   <span class="k">def</span> <span class="nf">myMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Calling parent class method&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span> <span class="c1"># define child class</span>
+   <span class="k">def</span> <span class="nf">myMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Calling child class method&#39;</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>          <span class="c1"># instance of child</span>
+<span class="n">c</span><span class="o">.</span><span class="n">myMethod</span><span class="p">()</span>         <span class="c1"># child calls overridden method</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Calling</span> <span class="n">child</span> <span class="k">class</span> <span class="nc">method</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="magic-methods">
+<h2>Magic Methods<a class="headerlink" href="#magic-methods" title="Permalink to this headline">¶</a></h2>
+<p>(Built_in Functions or Base Overloading Methods)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>__init__ ( self [,args…] )</p></li>
+<li><p>__del__( self )</p></li>
+<li><p>__repr__( self )</p></li>
+<li><p>__str__( self )</p></li>
+<li><p>__cmp__ ( self, x )</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="overloading-operators">
+<h2>Overloading Operators<a class="headerlink" href="#overloading-operators" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="k">class</span> <span class="nc">Vector</span><span class="p">:</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+
+   <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="s1">&#39;Vector (</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+
+   <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+      <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+
+<span class="n">v1</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Vector</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="iterator.html" class="btn btn-neutral float-right" title="Iterators &amp; Generators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modpack.html" class="btn btn-neutral float-left" title="Modules and Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

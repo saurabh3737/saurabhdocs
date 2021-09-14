@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Modules and Packages &mdash; PythonWorld 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classes and Objects" href="class.html" />
+    <link rel="prev" title="Functions" href="functions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modules and Packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-modules">1. Creating Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-import">a) import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1">Step 1:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2">Step 2:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-the-from-import-statement">b) The from…import Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-packages">2. Creating Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Step 1:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Step 2:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3">Step 3:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4">Step 4:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5">Step 5:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html#interview-questions">Interview Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pygames.html">Pygames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Modules and Packages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modpack.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="modules-and-packages">
+<span id="modpackg"></span><h1>Modules and Packages<a class="headerlink" href="#modules-and-packages" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creating-modules">
+<h2>1. Creating Modules<a class="headerlink" href="#creating-modules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="a-import">
+<h2>a) import<a class="headerlink" href="#a-import" title="Permalink to this headline">¶</a></h2>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module1</span><span class="p">[,</span> <span class="n">module2</span><span class="p">[,</span><span class="o">...</span> <span class="n">moduleN</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example:</p>
+</div>
+<div class="section" id="step-1">
+<h2>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h2>
+<p>Create module hello.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myprint_func</span><span class="p">(</span> <span class="n">par</span> <span class="p">):</span>
+   <span class="nb">print</span> <span class="s2">&quot;Hello : &quot;</span><span class="p">,</span> <span class="n">par</span>
+   <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2">
+<h2>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h2>
+<p>Now import this module hello.py in your test.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="c1"># Import module hello</span>
+<span class="kn">import</span> <span class="nn">hello</span>
+
+<span class="c1"># Now you can call defined function that module as follows</span>
+<span class="n">hello</span><span class="o">.</span><span class="n">myprint_func</span><span class="p">(</span><span class="s2">&quot;Saurabh&quot;</span><span class="p">)</span>
+
+<span class="n">Output</span><span class="p">:</span>
+<span class="n">Hello</span> <span class="p">:</span> <span class="n">Saurabh</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="b-the-from-import-statement">
+<h2>b) The from…import Statement<a class="headerlink" href="#b-the-from-import-statement" title="Permalink to this headline">¶</a></h2>
+<p>Python’s from statement lets you import specific attributes from a module into the current namespace
+Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">modname</span> <span class="kn">import</span> <span class="n">name1</span><span class="p">[,</span> <span class="n">name2</span><span class="p">[,</span> <span class="o">...</span> <span class="n">nameN</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-packages">
+<h2>2. Creating Packages<a class="headerlink" href="#creating-packages" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id1">
+<h2>Step 1:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Consider a file Apple.py available in Phone directory. This file has the following line of source code −</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="k">def</span> <span class="nf">Apple</span><span class="p">():</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;I&#39;m Apple Phone&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Step 2:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Similar, we have other two files having different functions with the same name as above.
+They are −</p>
+<p>Phone/Nokia.py file having function Nokia()</p>
+<p>Phone/Oppo.py file having function Oppo()</p>
+</div>
+<div class="section" id="step-3">
+<h2>Step 3:<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h2>
+<p>Now, create one more file __init__.py in the Phone directory −</p>
+<p>Phone/__init__.py</p>
+</div>
+<div class="section" id="step-4">
+<h2>Step 4:<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h2>
+<p>To make all of your functions available when you have imported Phone, you need to put explicit import statements in __init__.py as follows −</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Apple</span> <span class="kn">import</span> <span class="n">Apple</span>
+<span class="kn">from</span> <span class="nn">Nokia</span> <span class="kn">import</span> <span class="n">Nokia</span>
+<span class="kn">from</span> <span class="nn">Oppo</span> <span class="kn">import</span> <span class="n">Oppo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-5">
+<h2>Step 5:<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h2>
+<p>After you add these lines to __init__.py, you have all of these classes available when you import the Phone package.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="c1"># Now import your Phone Package.</span>
+<span class="kn">import</span> <span class="nn">Phone</span>
+
+<span class="n">Phone</span><span class="o">.</span><span class="n">Apple</span><span class="p">()</span>
+<span class="n">Phone</span><span class="o">.</span><span class="n">Nokia</span><span class="p">()</span>
+<span class="n">Phone</span><span class="o">.</span><span class="n">Oppo</span><span class="p">()</span>
+
+<span class="n">Output</span><span class="p">:</span>
+<span class="n">I</span><span class="s1">&#39;m Apple Phone</span>
+<span class="n">I</span><span class="s1">&#39;m Oppo Phone</span>
+<span class="n">I</span><span class="s1">&#39;m Nokia Phone</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="class.html" class="btn btn-neutral float-right" title="Classes and Objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="functions.html" class="btn btn-neutral float-left" title="Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Conditions &mdash; PythonWorld 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Loops" href="loops.html" />
+    <link rel="prev" title="Data Types" href="datatypes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Data Types</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Conditions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#if-statement">1. if statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#if-else-statement">2. if else statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#if-elif-else-statement">3. if elif else statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nested-statements">4. Nested statements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modpack.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html#interview-questions">Interview Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pygames.html">Pygames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Conditions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/condition.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conditions">
+<span id="cond"></span><h1>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="if-statement">
+<h2>1. if statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">¶</a></h2>
+<p>Syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">expression</span><span class="p">:</span>
+   <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">var</span><span class="o">==</span><span class="mi">10</span><span class="p">):</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;my variable is assigned with 10&quot;</span><span class="p">)</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="n">var</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">var</span><span class="p">:</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;my variable is assigned with 10&quot;</span><span class="p">)</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="n">var</span><span class="p">)</span>
+
+<span class="n">myvar</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">myvar</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;my variable is assigned with 0&quot;</span><span class="p">)</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="n">myvar</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">myvar</span><span class="p">:</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;my variable is assigned with 0&quot;</span><span class="p">)</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="n">myvar</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Thank You!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>my variable is assigned with 10
+10
+my variable is assigned with 10
+10
+my variable is assigned with 0
+0
+Good bye!
+</pre></div>
+</div>
+</div>
+<div class="section" id="if-else-statement">
+<h2>2. if else statement<a class="headerlink" href="#if-else-statement" title="Permalink to this headline">¶</a></h2>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">expression</span><span class="p">:</span>
+   <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+   <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Marks</span><span class="o">=</span><span class="mi">75</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Marks</span><span class="o">&gt;=</span><span class="mi">35</span><span class="p">):</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Pass: Congratulations!!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Fail: Better luck Next Time!!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Pass: Congratulations!!
+</pre></div>
+</div>
+</div>
+<div class="section" id="if-elif-else-statement">
+<h2>3. if elif else statement<a class="headerlink" href="#if-elif-else-statement" title="Permalink to this headline">¶</a></h2>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">expression</span><span class="p">:</span>
+   <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">elif</span><span class="p">:</span>
+   <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Marks</span><span class="o">=</span><span class="mi">75</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">Marks</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">):</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Distinction!!&quot;</span><span class="p">)</span>
+<span class="k">elif</span><span class="p">(</span><span class="n">Marks</span><span class="o">&gt;=</span><span class="mi">60</span> <span class="ow">and</span> <span class="n">Marks</span><span class="o">&lt;</span><span class="mi">80</span><span class="p">):</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;First Division&quot;</span><span class="p">)</span>
+<span class="k">elif</span><span class="p">(</span><span class="n">Marks</span><span class="o">&gt;=</span><span class="mi">45</span> <span class="ow">and</span> <span class="n">Marks</span><span class="o">&lt;</span><span class="mi">60</span><span class="p">):</span>
+   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Second Division&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">Marks</span> <span class="o">&gt;=</span> <span class="mi">35</span> <span class="ow">and</span> <span class="n">Marks</span> <span class="o">&lt;</span> <span class="mi">45</span><span class="p">):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Third Division&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fail&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">First</span> <span class="n">Division</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nested-statements">
+<h2>4. Nested statements<a class="headerlink" href="#nested-statements" title="Permalink to this headline">¶</a></h2>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">expression1</span><span class="p">:</span>
+   <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+   <span class="k">if</span> <span class="n">expression2</span><span class="p">:</span>
+      <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+   <span class="k">elif</span> <span class="n">expression3</span><span class="p">:</span>
+      <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+   <span class="k">else</span>
+      <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">expression4</span><span class="p">:</span>
+   <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;=</span> <span class="n">num2</span><span class="p">):</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;=</span> <span class="n">num3</span><span class="p">):</span>
+      <span class="n">greater</span> <span class="o">=</span> <span class="n">num1</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">greater</span> <span class="o">=</span> <span class="n">num3</span>
+<span class="k">elif</span><span class="p">(</span><span class="n">num2</span><span class="o">&gt;=</span><span class="n">num3</span><span class="p">):</span>
+   <span class="n">greater</span> <span class="o">=</span> <span class="n">num2</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="n">greater</span><span class="o">=</span> <span class="n">num3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Greater number is&quot;</span><span class="p">,</span> <span class="n">greater</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Greater</span> <span class="n">number</span> <span class="ow">is</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="loops.html" class="btn btn-neutral float-right" title="Loops" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="datatypes.html" class="btn btn-neutral float-left" title="Data Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

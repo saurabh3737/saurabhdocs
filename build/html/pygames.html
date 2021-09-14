@@ -1,0 +1,1308 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pygames &mdash; PythonWorld 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Socket Programing" href="socket.html" />
+    <link rel="prev" title="Case Studies" href="cases.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modpack.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html#interview-questions">Interview Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">Case Studies</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pygames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-of-pygames">1. Introduction of Pygames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-images-in-pygames">2. Adding images in Pygames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#moving-images-in-pygames">3. Moving images in Pygames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-boundary-to-images-in-pygames">4. Adding Boundary to images in Pygames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-text-in-pygames">5. Adding text in Pygames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-objects-in-pygames">6. Adding objects in Pygames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crashing-collision-in-pygames">7. Crashing/Collision in Pygames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scoreboard-in-pygames">8. ScoreBoard in Pygames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-start-menu">9. Creating Start Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-sound-and-music-in-pygames">10. Add Sound and Music in Pygames</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Pygames</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/pygames.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pygames">
+<span id="pygs"></span><h1>Pygames<a class="headerlink" href="#pygames" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-of-pygames">
+<h2>1. Introduction of Pygames<a class="headerlink" href="#introduction-of-pygames" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to display game window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the pygame library and initialise the game engine</span>
+<span class="kn">import</span> <span class="nn">pygame</span>
+
+<span class="hll"><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</span><span class="hll"><span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">800</span><span class="p">,</span><span class="mi">600</span><span class="p">))</span>
+</span><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;My First Game&#39;</span><span class="p">)</span>
+<span class="hll"><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+</span><span class="n">crashed</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">crashed</span><span class="p">:</span>
+
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">crashed</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-images-in-pygames">
+<h2>2. Adding images in Pygames<a class="headerlink" href="#adding-images-in-pygames" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to add image game window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+
+<span class="n">display_width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">display_height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">display_width</span><span class="p">,</span><span class="n">display_height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;My First Game&#39;</span><span class="p">)</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="hll"><span class="n">white</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+<span class="n">crashed</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">myImg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myimage.png&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">myImg</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+
+<span class="n">x</span> <span class="o">=</span>  <span class="p">(</span><span class="n">display_width</span> <span class="o">*</span> <span class="mf">0.45</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">crashed</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">crashed</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+    <span class="n">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="moving-images-in-pygames">
+<h2>3. Moving images in Pygames<a class="headerlink" href="#moving-images-in-pygames" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to Move image in game window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">display_width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">display_height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">display_width</span><span class="p">,</span> <span class="n">display_height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;My First Game&#39;</span><span class="p">)</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">white</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+<span class="n">crashed</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">myImg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myimage.png&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">myImg</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_width</span> <span class="o">*</span> <span class="mf">0.45</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">car_speed</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">crashed</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">crashed</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># capturing Key events for moving left and right movement</span>
+<span class="hll">        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+</span>            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                <span class="n">x_change</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+            <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                <span class="n">x_change</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">x_change</span>
+
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+    <span class="n">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-boundary-to-images-in-pygames">
+<h2>4. Adding Boundary to images in Pygames<a class="headerlink" href="#adding-boundary-to-images-in-pygames" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to add boundary to image in game window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">display_width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">display_height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">white</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">myimg_width</span> <span class="o">=</span> <span class="mi">73</span>
+
+<span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">display_width</span><span class="p">,</span> <span class="n">display_height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;My First Game&#39;</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="n">myImg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myimage.png&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">myImg</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">game_loop</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_width</span> <span class="o">*</span> <span class="mf">0.45</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+
+    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">gameExit</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">gameExit</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">gameExit</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">5</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">x_change</span>
+
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+        <span class="n">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="hll">        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">display_width</span> <span class="o">-</span> <span class="n">myimg_width</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span>            <span class="n">gameExit</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+
+<span class="n">game_loop</span><span class="p">()</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-text-in-pygames">
+<h2>5. Adding text in Pygames<a class="headerlink" href="#adding-text-in-pygames" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to add text in game window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">display_width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">display_height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">white</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">img_width</span> <span class="o">=</span> <span class="mi">73</span>
+
+<span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">display_width</span><span class="p">,</span> <span class="n">display_height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;My First Game&#39;</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="n">myImg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myimage.png&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">myImg</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="p">):</span>
+    <span class="n">textSurface</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">textSurface</span><span class="p">,</span> <span class="n">textSurface</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">message_display</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">largeText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="s1">&#39;freesansbold.ttf&#39;</span><span class="p">,</span> <span class="mi">115</span><span class="p">)</span>
+<span class="hll">    <span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">largeText</span><span class="p">)</span>
+</span>    <span class="n">TextRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">display_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span><span class="p">)</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">game_loop</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">crash</span><span class="p">():</span>
+    <span class="n">message_display</span><span class="p">(</span><span class="s1">&#39;You Crashed&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">game_loop</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_width</span> <span class="o">*</span> <span class="mf">0.45</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+
+    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">gameExit</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">gameExit</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">5</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">x_change</span>
+
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+        <span class="n">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">display_width</span> <span class="o">-</span> <span class="n">img_width</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">crash</span><span class="p">()</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+
+<span class="n">game_loop</span><span class="p">()</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-objects-in-pygames">
+<h2>6. Adding objects in Pygames<a class="headerlink" href="#adding-objects-in-pygames" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to add object in game window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">display_width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">display_height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">white</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+<span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">car_width</span> <span class="o">=</span> <span class="mi">73</span>
+
+<span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">display_width</span><span class="p">,</span><span class="n">display_height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;My First Game&#39;</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="n">myImg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myimage.png&#39;</span><span class="p">)</span>
+
+<span class="c1">#######</span>
+<span class="hll"><span class="k">def</span> <span class="nf">things</span><span class="p">(</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+</span>    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">gameDisplay</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">[</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">])</span>
+<span class="c1">#######</span>
+
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">myImg</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="p">):</span>
+    <span class="n">textSurface</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">textSurface</span><span class="p">,</span> <span class="n">textSurface</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">message_display</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">largeText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="s1">&#39;freesansbold.ttf&#39;</span><span class="p">,</span><span class="mi">115</span><span class="p">)</span>
+    <span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">largeText</span><span class="p">)</span>
+    <span class="n">TextRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">display_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),(</span><span class="n">display_height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span><span class="p">)</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">game_loop</span><span class="p">()</span>
+
+
+
+<span class="k">def</span> <span class="nf">crash</span><span class="p">():</span>
+    <span class="n">message_display</span><span class="p">(</span><span class="s1">&#39;You Crashed&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">game_loop</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_width</span> <span class="o">*</span> <span class="mf">0.45</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+
+    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1">######</span>
+    <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">display_width</span><span class="p">)</span>
+    <span class="n">thing_starty</span> <span class="o">=</span> <span class="o">-</span><span class="mi">600</span>
+    <span class="n">thing_speed</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">thing_width</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">thing_height</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="c1">######</span>
+    <span class="n">gameExit</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">gameExit</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">5</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">x_change</span>
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+
+        <span class="c1">##########</span>
+        <span class="c1"># things(thingx, thingy, thingw, thingh, color)</span>
+        <span class="n">things</span><span class="p">(</span><span class="n">thing_startx</span><span class="p">,</span> <span class="n">thing_starty</span><span class="p">,</span> <span class="n">thing_width</span><span class="p">,</span> <span class="n">thing_height</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+        <span class="n">thing_starty</span> <span class="o">+=</span> <span class="n">thing_speed</span>
+        <span class="n">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+        <span class="c1">##########</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">display_width</span> <span class="o">-</span> <span class="n">car_width</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">crash</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">thing_starty</span> <span class="o">&gt;</span> <span class="n">display_height</span><span class="p">:</span>
+            <span class="n">thing_starty</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">thing_height</span>
+            <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">display_width</span><span class="p">)</span>
+
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+
+
+<span class="n">game_loop</span><span class="p">()</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="crashing-collision-in-pygames">
+<h2>7. Crashing/Collision in Pygames<a class="headerlink" href="#crashing-collision-in-pygames" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to add crashing in game window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">display_width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">display_height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">white</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+<span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">car_width</span> <span class="o">=</span> <span class="mi">73</span>
+
+<span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">display_width</span><span class="p">,</span><span class="n">display_height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;My First Game&#39;</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="n">myImg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myimage.png&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">things</span><span class="p">(</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">gameDisplay</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">[</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">myImg</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="p">):</span>
+    <span class="n">textSurface</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">textSurface</span><span class="p">,</span> <span class="n">textSurface</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">message_display</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">largeText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="s1">&#39;freesansbold.ttf&#39;</span><span class="p">,</span><span class="mi">115</span><span class="p">)</span>
+    <span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">largeText</span><span class="p">)</span>
+    <span class="n">TextRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">display_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),(</span><span class="n">display_height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span><span class="p">)</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">game_loop</span><span class="p">()</span>
+
+
+
+<span class="k">def</span> <span class="nf">crash</span><span class="p">():</span>
+    <span class="n">message_display</span><span class="p">(</span><span class="s1">&#39;You Crashed&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">game_loop</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_width</span> <span class="o">*</span> <span class="mf">0.45</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+
+    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">display_width</span><span class="p">)</span>
+    <span class="n">thing_starty</span> <span class="o">=</span> <span class="o">-</span><span class="mi">600</span>
+    <span class="n">thing_speed</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">thing_width</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">thing_height</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="n">gameExit</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">gameExit</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">5</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">x_change</span>
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+
+        <span class="c1"># things(thingx, thingy, thingw, thingh, color)</span>
+        <span class="n">things</span><span class="p">(</span><span class="n">thing_startx</span><span class="p">,</span> <span class="n">thing_starty</span><span class="p">,</span> <span class="n">thing_width</span><span class="p">,</span> <span class="n">thing_height</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+        <span class="n">thing_starty</span> <span class="o">+=</span> <span class="n">thing_speed</span>
+        <span class="n">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">display_width</span> <span class="o">-</span> <span class="n">car_width</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">crash</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">thing_starty</span> <span class="o">&gt;</span> <span class="n">display_height</span><span class="p">:</span>
+            <span class="n">thing_starty</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">thing_height</span>
+            <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">display_width</span><span class="p">)</span>
+
+        <span class="c1">####</span>
+<span class="hll">        <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">thing_starty</span><span class="o">+</span><span class="n">thing_height</span><span class="p">:</span>
+</span>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y crossover&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">thing_startx</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">thing_startx</span> <span class="o">+</span> <span class="n">thing_width</span> <span class="ow">or</span> <span class="n">x</span><span class="o">+</span><span class="n">car_width</span> <span class="o">&gt;</span> <span class="n">thing_startx</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">+</span> <span class="n">car_width</span> <span class="o">&lt;</span> <span class="n">thing_startx</span><span class="o">+</span><span class="n">thing_width</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x crossover&#39;</span><span class="p">)</span>
+                <span class="n">crash</span><span class="p">()</span>
+        <span class="c1">####</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+
+<span class="n">game_loop</span><span class="p">()</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scoreboard-in-pygames">
+<h2>8. ScoreBoard in Pygames<a class="headerlink" href="#scoreboard-in-pygames" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to add scoreboard in game window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">display_width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">display_height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">white</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+<span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">block_color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">53</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+
+<span class="n">car_width</span> <span class="o">=</span> <span class="mi">73</span>
+
+<span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">display_width</span><span class="p">,</span><span class="n">display_height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;My First Game&#39;</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="n">myImg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myimage.png&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">things_dodged</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+    <span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;Dodged: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="kc">True</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">things</span><span class="p">(</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">gameDisplay</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">[</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">myImg</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="p">):</span>
+    <span class="n">textSurface</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">textSurface</span><span class="p">,</span> <span class="n">textSurface</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">message_display</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">largeText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="s1">&#39;freesansbold.ttf&#39;</span><span class="p">,</span><span class="mi">115</span><span class="p">)</span>
+    <span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">largeText</span><span class="p">)</span>
+    <span class="n">TextRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">display_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),(</span><span class="n">display_height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span><span class="p">)</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">game_loop</span><span class="p">()</span>
+
+
+
+<span class="k">def</span> <span class="nf">crash</span><span class="p">():</span>
+    <span class="n">message_display</span><span class="p">(</span><span class="s1">&#39;You Crashed&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">game_loop</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_width</span> <span class="o">*</span> <span class="mf">0.45</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+
+    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">display_width</span><span class="p">)</span>
+    <span class="n">thing_starty</span> <span class="o">=</span> <span class="o">-</span><span class="mi">600</span>
+    <span class="n">thing_speed</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">thing_width</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">thing_height</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="n">thingCount</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">dodged</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">gameExit</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">gameExit</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">5</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">x_change</span>
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+
+        <span class="c1"># things(thingx, thingy, thingw, thingh, color)</span>
+        <span class="n">things</span><span class="p">(</span><span class="n">thing_startx</span><span class="p">,</span> <span class="n">thing_starty</span><span class="p">,</span> <span class="n">thing_width</span><span class="p">,</span> <span class="n">thing_height</span><span class="p">,</span> <span class="n">block_color</span><span class="p">)</span>
+
+
+
+        <span class="n">thing_starty</span> <span class="o">+=</span> <span class="n">thing_speed</span>
+        <span class="n">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="hll">        <span class="n">things_dodged</span><span class="p">(</span><span class="n">dodged</span><span class="p">)</span>
+</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">display_width</span> <span class="o">-</span> <span class="n">car_width</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">crash</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">thing_starty</span> <span class="o">&gt;</span> <span class="n">display_height</span><span class="p">:</span>
+            <span class="n">thing_starty</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">thing_height</span>
+            <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">display_width</span><span class="p">)</span>
+            <span class="n">dodged</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">thing_speed</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">thing_width</span> <span class="o">+=</span> <span class="p">(</span><span class="n">dodged</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">thing_starty</span><span class="o">+</span><span class="n">thing_height</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y crossover&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">thing_startx</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">thing_startx</span> <span class="o">+</span> <span class="n">thing_width</span> <span class="ow">or</span> <span class="n">x</span><span class="o">+</span><span class="n">car_width</span> <span class="o">&gt;</span> <span class="n">thing_startx</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">+</span> <span class="n">car_width</span> <span class="o">&lt;</span> <span class="n">thing_startx</span><span class="o">+</span><span class="n">thing_width</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x crossover&#39;</span><span class="p">)</span>
+                <span class="n">crash</span><span class="p">()</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">game_loop</span><span class="p">()</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-start-menu">
+<h2>9. Creating Start Menu<a class="headerlink" href="#creating-start-menu" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to add start Menu window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">display_width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">display_height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">white</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+<span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">block_color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">53</span><span class="p">,</span><span class="mi">115</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+
+<span class="n">car_width</span> <span class="o">=</span> <span class="mi">73</span>
+
+<span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">display_width</span><span class="p">,</span><span class="n">display_height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;My First Game&#39;</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="n">myImg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myimage.png&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">things_dodged</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+    <span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;Dodged: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="kc">True</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">things</span><span class="p">(</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">gameDisplay</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">[</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">myImg</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="p">):</span>
+    <span class="n">textSurface</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">textSurface</span><span class="p">,</span> <span class="n">textSurface</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">message_display</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">largeText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="s1">&#39;freesansbold.ttf&#39;</span><span class="p">,</span><span class="mi">115</span><span class="p">)</span>
+    <span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">largeText</span><span class="p">)</span>
+    <span class="n">TextRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">display_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),(</span><span class="n">display_height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span><span class="p">)</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">game_loop</span><span class="p">()</span>
+
+
+
+<span class="k">def</span> <span class="nf">crash</span><span class="p">():</span>
+    <span class="n">message_display</span><span class="p">(</span><span class="s1">&#39;You Crashed&#39;</span><span class="p">)</span>
+
+<span class="hll"><span class="k">def</span> <span class="nf">game_intro</span><span class="p">():</span>
+</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">while</span> <span class="n">intro</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+        <span class="n">largeText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="s1">&#39;freesansbold.ttf&#39;</span><span class="p">,</span><span class="mi">115</span><span class="p">)</span>
+        <span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="s2">&quot;A bit Racey&quot;</span><span class="p">,</span> <span class="n">largeText</span><span class="p">)</span>
+        <span class="n">TextRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">display_width</span><span class="o">/</span><span class="mi">2</span><span class="p">),(</span><span class="n">display_height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span><span class="p">)</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+
+
+
+
+
+<span class="k">def</span> <span class="nf">game_loop</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_width</span> <span class="o">*</span> <span class="mf">0.45</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+
+    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">display_width</span><span class="p">)</span>
+    <span class="n">thing_starty</span> <span class="o">=</span> <span class="o">-</span><span class="mi">600</span>
+    <span class="n">thing_speed</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">thing_width</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">thing_height</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="n">thingCount</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">dodged</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">gameExit</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">gameExit</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">5</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">x_change</span>
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+
+        <span class="n">things</span><span class="p">(</span><span class="n">thing_startx</span><span class="p">,</span> <span class="n">thing_starty</span><span class="p">,</span> <span class="n">thing_width</span><span class="p">,</span> <span class="n">thing_height</span><span class="p">,</span> <span class="n">block_color</span><span class="p">)</span>
+
+
+
+        <span class="n">thing_starty</span> <span class="o">+=</span> <span class="n">thing_speed</span>
+        <span class="n">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">things_dodged</span><span class="p">(</span><span class="n">dodged</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">display_width</span> <span class="o">-</span> <span class="n">car_width</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">crash</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">thing_starty</span> <span class="o">&gt;</span> <span class="n">display_height</span><span class="p">:</span>
+            <span class="n">thing_starty</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">thing_height</span>
+            <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">display_width</span><span class="p">)</span>
+            <span class="n">dodged</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">thing_speed</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">thing_width</span> <span class="o">+=</span> <span class="p">(</span><span class="n">dodged</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">thing_starty</span><span class="o">+</span><span class="n">thing_height</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y crossover&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">thing_startx</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">thing_startx</span> <span class="o">+</span> <span class="n">thing_width</span> <span class="ow">or</span> <span class="n">x</span><span class="o">+</span><span class="n">car_width</span> <span class="o">&gt;</span> <span class="n">thing_startx</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">+</span> <span class="n">car_width</span> <span class="o">&lt;</span> <span class="n">thing_startx</span><span class="o">+</span><span class="n">thing_width</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x crossover&#39;</span><span class="p">)</span>
+                <span class="n">crash</span><span class="p">()</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">game_intro</span><span class="p">()</span>
+<span class="n">game_loop</span><span class="p">()</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-sound-and-music-in-pygames">
+<h2>10. Add Sound and Music in Pygames<a class="headerlink" href="#add-sound-and-music-in-pygames" title="Permalink to this headline">¶</a></h2>
+<ol class="lowerroman simple">
+<li><p>Program to add sound and music in game window</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="c1">#############</span>
+<span class="hll"><span class="n">crash_sound</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="s2">&quot;cello.wav&quot;</span><span class="p">)</span>
+</span><span class="c1">#############</span>
+
+<span class="n">display_width</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">display_height</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">white</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+<span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">green</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">bright_red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">bright_green</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">block_color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">53</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+<span class="n">car_width</span> <span class="o">=</span> <span class="mi">73</span>
+
+<span class="n">gameDisplay</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">display_width</span><span class="p">,</span> <span class="n">display_height</span><span class="p">))</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;Saurabh Car Racer&#39;</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="n">carImg</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;racecar.png&#39;</span><span class="p">)</span>
+<span class="n">gameIcon</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;caricon.jpg&#39;</span><span class="p">)</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_icon</span><span class="p">(</span><span class="n">gameIcon</span><span class="p">)</span>
+
+<span class="n">pause</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<span class="c1"># crash = True</span>
+
+<span class="k">def</span> <span class="nf">things_dodged</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+    <span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="s2">&quot;comicsansms&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;Dodged: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="kc">True</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">things</span><span class="p">(</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">gameDisplay</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">[</span><span class="n">thingx</span><span class="p">,</span> <span class="n">thingy</span><span class="p">,</span> <span class="n">thingw</span><span class="p">,</span> <span class="n">thingh</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">carImg</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">text_objects</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">font</span><span class="p">):</span>
+    <span class="n">textSurface</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">textSurface</span><span class="p">,</span> <span class="n">textSurface</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">crash</span><span class="p">():</span>
+    <span class="c1">####################################</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">crash_sound</span><span class="p">)</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="c1">####################################</span>
+    <span class="n">largeText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="s2">&quot;comicsansms&quot;</span><span class="p">,</span> <span class="mi">115</span><span class="p">)</span>
+    <span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="s2">&quot;You Crashed&quot;</span><span class="p">,</span> <span class="n">largeText</span><span class="p">)</span>
+    <span class="n">TextRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">display_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+        <span class="n">button</span><span class="p">(</span><span class="s2">&quot;Play Again&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">bright_green</span><span class="p">,</span> <span class="n">game_loop</span><span class="p">)</span>
+        <span class="n">button</span><span class="p">(</span><span class="s2">&quot;Quit&quot;</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">bright_red</span><span class="p">,</span> <span class="n">quitgame</span><span class="p">)</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">button</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">ic</span><span class="p">,</span> <span class="n">ac</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">mouse</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">get_pos</span><span class="p">()</span>
+    <span class="n">click</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span> <span class="o">&gt;</span> <span class="n">mouse</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="n">mouse</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">gameDisplay</span><span class="p">,</span> <span class="n">ac</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">click</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">action</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">action</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">gameDisplay</span><span class="p">,</span> <span class="n">ic</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+    <span class="n">smallText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="s2">&quot;comicsansms&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">textSurf</span><span class="p">,</span> <span class="n">textRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">smallText</span><span class="p">)</span>
+    <span class="n">textRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">w</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)),</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">h</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)))</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">textSurf</span><span class="p">,</span> <span class="n">textRect</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">quitgame</span><span class="p">():</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">quit</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">unpause</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">pause</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">unpause</span><span class="p">()</span>
+    <span class="n">pause</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<span class="k">def</span> <span class="nf">paused</span><span class="p">():</span>
+    <span class="c1">############</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span>
+    <span class="c1">#############</span>
+    <span class="n">largeText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="s2">&quot;comicsansms&quot;</span><span class="p">,</span> <span class="mi">115</span><span class="p">)</span>
+    <span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="s2">&quot;Paused&quot;</span><span class="p">,</span> <span class="n">largeText</span><span class="p">)</span>
+    <span class="n">TextRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">display_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">pause</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+        <span class="n">button</span><span class="p">(</span><span class="s2">&quot;Continue&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">bright_green</span><span class="p">,</span> <span class="n">unpause</span><span class="p">)</span>
+        <span class="n">button</span><span class="p">(</span><span class="s2">&quot;Quit&quot;</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">bright_red</span><span class="p">,</span> <span class="n">quitgame</span><span class="p">)</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">game_intro</span><span class="p">():</span>
+    <span class="n">intro</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">while</span> <span class="n">intro</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="c1"># print(event)</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+        <span class="n">largeText</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="s2">&quot;comicsansms&quot;</span><span class="p">,</span> <span class="mi">115</span><span class="p">)</span>
+        <span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span> <span class="o">=</span> <span class="n">text_objects</span><span class="p">(</span><span class="s2">&quot;Car Racer&quot;</span><span class="p">,</span> <span class="n">largeText</span><span class="p">)</span>
+        <span class="n">TextRect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">((</span><span class="n">display_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">TextSurf</span><span class="p">,</span> <span class="n">TextRect</span><span class="p">)</span>
+
+        <span class="n">button</span><span class="p">(</span><span class="s2">&quot;GO!&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">bright_green</span><span class="p">,</span> <span class="n">game_loop</span><span class="p">)</span>
+        <span class="n">button</span><span class="p">(</span><span class="s2">&quot;Quit&quot;</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">bright_red</span><span class="p">,</span> <span class="n">quitgame</span><span class="p">)</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">game_loop</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">pause</span>
+    <span class="c1">############</span>
+<span class="hll">    <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;ChillingMusic.wav&#39;</span><span class="p">)</span>
+</span>    <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1">############</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_width</span> <span class="o">*</span> <span class="mf">0.45</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">display_height</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+
+    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">display_width</span><span class="p">)</span>
+    <span class="n">thing_starty</span> <span class="o">=</span> <span class="o">-</span><span class="mi">600</span>
+    <span class="n">thing_speed</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">thing_width</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">thing_height</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="n">thingCount</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">dodged</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">gameExit</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">gameExit</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+                <span class="n">quit</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">5</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_p</span><span class="p">:</span>
+                    <span class="n">pause</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="n">paused</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span> <span class="ow">or</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                    <span class="n">x_change</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">x_change</span>
+        <span class="n">gameDisplay</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">white</span><span class="p">)</span>
+
+        <span class="n">things</span><span class="p">(</span><span class="n">thing_startx</span><span class="p">,</span> <span class="n">thing_starty</span><span class="p">,</span> <span class="n">thing_width</span><span class="p">,</span> <span class="n">thing_height</span><span class="p">,</span> <span class="n">block_color</span><span class="p">)</span>
+
+        <span class="n">thing_starty</span> <span class="o">+=</span> <span class="n">thing_speed</span>
+        <span class="n">car</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">things_dodged</span><span class="p">(</span><span class="n">dodged</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">display_width</span> <span class="o">-</span> <span class="n">car_width</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">crash</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">thing_starty</span> <span class="o">&gt;</span> <span class="n">display_height</span><span class="p">:</span>
+            <span class="n">thing_starty</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="n">thing_height</span>
+            <span class="n">thing_startx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">display_width</span><span class="p">)</span>
+            <span class="n">dodged</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">thing_speed</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">thing_width</span> <span class="o">+=</span> <span class="p">(</span><span class="n">dodged</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">thing_starty</span> <span class="o">+</span> <span class="n">thing_height</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y crossover&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">thing_startx</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">thing_startx</span> <span class="o">+</span> <span class="n">thing_width</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">+</span> <span class="n">car_width</span> <span class="o">&gt;</span> <span class="n">thing_startx</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">+</span> <span class="n">car_width</span> <span class="o">&lt;</span> <span class="n">thing_startx</span> <span class="o">+</span> <span class="n">thing_width</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x crossover&#39;</span><span class="p">)</span>
+                <span class="n">crash</span><span class="p">()</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+
+<span class="n">game_intro</span><span class="p">()</span>
+<span class="n">game_loop</span><span class="p">()</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="socket.html" class="btn btn-neutral float-right" title="Socket Programing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cases.html" class="btn btn-neutral float-left" title="Case Studies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,20 +1,42 @@
-.. pythontutorials documentation master file, created by
-   sphinx-quickstart on Mon Jul 20 00:48:51 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _ind:
 
-Welcome to pythontutorials's documentation!
-===========================================
+Welcome to Saurabh's World of Python!
+=========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
-   intro
+   intpy
 
-1. first good
+   datatypes
 
-2. second link intro :ref:`clicke me <homepage>`
+   condition
+
+   loops
+
+   functions
+
+   modpack
+
+   class
+
+   iterator
+
+   decorator
+
+   utilities
+
+   examples
+
+   cases
+
+   pygames
+
+   socket
+
+   editor
+
 
 Indices and tables
 ==================

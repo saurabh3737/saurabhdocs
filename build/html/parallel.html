@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basics of Concurrency vs Parallelism &mdash; PythonWorld 0.7 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Multithreading" href="multithreading.html" />
+    <link rel="prev" title="Classes and Objects" href="class.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modpack.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes and Objects</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basics of Concurrency vs Parallelism</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-cooking-example">A Cooking Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#when-to-use-threads-versus-processes">When to use Threads versus Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concurrency-in-python">Concurrency in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-global-interpreter-lock-gil">Python Global Interpreter Lock (GIL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-multiprocess-in-python">How To MultiProcess In Python?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multithreading.html">Multithreading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiprocessing.html">Multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html#interview-questions">Interview Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pygames.html">Pygames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Basics of Concurrency vs Parallelism</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/parallel.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basics-of-concurrency-vs-parallelism">
+<span id="parallel"></span><h1>Basics of Concurrency vs Parallelism<a class="headerlink" href="#basics-of-concurrency-vs-parallelism" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>CPU</strong></p></li>
+</ul>
+<p>We can think of a CPU as the brain of a computer. A CPU has its cycles that are essentially the time that the CPU takes for the execution of one processor operation. One tick of a cycle is 1 bytecode instruction.</p>
+<ul class="simple">
+<li><p><strong>Cores And Processes</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>A CPU can have multiple cores.</p></li>
+<li><p>Each core can run multiple processes.</p></li>
+<li><p>A process is essentially the applications/the instructions of the programs we run on our computer.</p></li>
+<li><p>Each process has its own memory space.</p></li>
+</ol>
+<p>Example:
+If we click on the Processes tab, we will see all of the processes that are currently running on our computer such as iexplorer.exe, chrome.exe, PyCharm, Python.exe, and so on. Each Python process has its own Python interpreter, memory space, and the GIL (which I will explain shortly).</p>
+<ul class="simple">
+<li><p><strong>Threads</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Furthermore, each process can run multiple threads within its context.</p></li>
+<li><p>A thread is a set of coded computer instructions.</p></li>
+<li><p>Each thread has its own memory space.</p></li>
+</ol>
+<p>4. It also has access to the process memory and context information.
+Example:
+When we run a process, such as Python.exe, it executes the code within its Main thread. The main thread can start up multiple threads. Subsequently, a process can start up multiple subprocesses.</p>
+<div class="section" id="a-cooking-example">
+<h2>A Cooking Example<a class="headerlink" href="#a-cooking-example" title="Permalink to this headline">¶</a></h2>
+<p>This example will help us understand the concurrency and parallelism concepts better</p>
+<p>Scenario:
+It’s a Sunday morning and I am expecting 10 of my friends to visit my house for lunch. I have around 3 hours to cook a meal for all of my 10 friends.
+So I decide to write down the sequence of the cooking steps along with the time each of these steps would take me:</p>
+<a class="reference internal image-reference" href="_images/cook.png"><img alt="Alternative text" src="_images/cook.png" style="width: 550px;" /></a>
+<p>Now, some of the steps are more time consuming than others.</p>
+<ol class="arabic simple">
+<li><p>I start by washing vegetables which would take me around 5 minutes.</p></li>
+<li><p>Then I move on to cutting the vegetables which consume around 13 minutes of my time.</p></li>
+<li><p>The cooking process requires boiling the vegetables which can take around 30 minutes.</p></li>
+<li><p>Lastly, I serve the cooked food on a plate that takes around 2 minutes.</p></li>
+</ol>
+<p>In total, it would consume approximately 50 minutes to cook the food for one of my friends.
+Now, repeat the process 10 times and it will take me 500 minutes.
+That’s around 8 hours of cooking.</p>
+<ul class="simple">
+<li><p><strong>But hold on, I only have 3 hours to do an 8 hours task.</strong></p></li>
+<li><p><strong>How do I do 8 hours task within 3 hours?</strong></p></li>
+<li><p><strong>Can I parallelise it?</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/cook2.png"><img alt="Alternative text" src="_images/cook2.png" style="width: 550px;" /></a>
+</div>
+<div class="section" id="when-to-use-threads-versus-processes">
+<h2>When to use Threads versus Processes<a class="headerlink" href="#when-to-use-threads-versus-processes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Threads</strong> are typically best for IO tasks or tasks involving external systems since threads work well to combine results quickly. On the other hand, processes need to pickle their results and therefore take more time to combine results from multiple processes.</p></li>
+<li><p><strong>Threads</strong> provide no benefit for expensive CPU tasks since threads must run within the GIL.</p></li>
+<li><p><strong>Multiple processes</strong> can speed up Python operations that are CPU intensive because they can utilize multiple cores and avoid Python’s GIL.</p></li>
+</ul>
+</div>
+<div class="section" id="concurrency-in-python">
+<h2>Concurrency in Python<a class="headerlink" href="#concurrency-in-python" title="Permalink to this headline">¶</a></h2>
+<p>One of the most frequently asked questions from beginning Python programmers when they explore multithreaded code for optimisation of CPU-bound code is
+<strong>“Why does my program run slower when I use multiple threads?”.</strong></p>
+<ul class="simple">
+<li><p>The expectation is that on a multi-core machine a multithreaded code should make use of these extra cores and thus increase overall performance.</p></li>
+<li><p>Unfortunately the internals of the main Python interpreter, CPython, negate the possibility of true multi-threading due to a process known as the Global Interpreter Lock (GIL).</p></li>
+<li><p>The GIL is necessary because the Python interpreter is not thread safe.</p></li>
+<li><p>This means that there is a globally enforced lock when trying to safely access Python objects from within threads.</p></li>
+<li><p>At any one time only a single thread can acquire a lock for a Python object or C API.</p></li>
+<li><p>The interpreter will reacquire this lock for every 100 bytecodes of Python instructions and around (potentially) blocking I/O operations.</p></li>
+<li><p>Because of this lock CPU-bound code will see no gain in performance when using the Threading library,</p></li>
+<li><p>But it will likely gain performance increases if the Multiprocessing library is used.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/gil.png"><img alt="Alternative text" src="_images/gil.png" style="width: 550px;" /></a>
+<p><strong>Concurrent applications are usually less expensive than parallel applications because creating new processes are more expensive than creating new threads.</strong></p>
+</div>
+<div class="section" id="python-global-interpreter-lock-gil">
+<h2>Python Global Interpreter Lock (GIL)<a class="headerlink" href="#python-global-interpreter-lock-gil" title="Permalink to this headline">¶</a></h2>
+<p>The GIL is one of the most important concepts to understand for the advanced Python users.
+To understand GIL.</p>
+<ul class="simple">
+<li><p>It’s important to remember that the python memory manager is not thread-safe.</p></li>
+<li><p>As a result, multi-threads can update the same object in memory.</p></li>
+<li><p>This can end up corrupting the state of objects in an application.</p></li>
+<li><p>CPython is built on C code and the interpreter’s internal structures along with the C code structures are not thread-safe.</p></li>
+</ul>
+<p><strong>The GIL is a lock acquired by the Python Interpreter</strong>
+<strong>GIL ensures that only one thread can run the interpreter at a given instance of time.</strong></p>
+</div>
+<div class="section" id="how-to-multiprocess-in-python">
+<h2>How To MultiProcess In Python?<a class="headerlink" href="#how-to-multiprocess-in-python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Finally, I wanted to explain how parallelism works in Python.</p></li>
+<li><p>Most of the data cleaning and model training tasks in data science are CPU bound in nature.</p></li>
+<li><p>We can improve the performance of CPU bound operations in a multi-core machine by utilising the multiprocessing features of Python.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="multithreading.html" class="btn btn-neutral float-right" title="Multithreading" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="class.html" class="btn btn-neutral float-left" title="Classes and Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -21,6 +21,12 @@ Welcome to Saurabh's World of Python!
 
    class
 
+   parallel
+
+   multithreading
+
+   multiprocessing
+
    iterator
 
    decorator

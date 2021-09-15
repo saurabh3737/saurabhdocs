@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Multiprocessing &mdash; PythonWorld 0.7 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Iterators &amp; Generators" href="iterator.html" />
+    <link rel="prev" title="Multithreading" href="multithreading.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PythonWorld
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intpy.html">Python Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="condition.html">Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modpack.html">Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Basics of Concurrency vs Parallelism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multithreading.html">Multithreading</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Multiprocessing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cpu-heavy-computation-with-multithreading">CPU Heavy Computation with Multithreading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cpu-heavy-computation-with-multiprocessing">CPU Heavy Computation with Multiprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#process-vs-pool-class">Process Vs Pool Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="iterator.html">Iterators &amp; Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html#interview-questions">Interview Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cases.html">Case Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pygames.html">Pygames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Socket Programing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editor.html">Try Yourself</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PythonWorld</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Multiprocessing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/multiprocessing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="multiprocessing">
+<span id="process"></span><h1>Multiprocessing<a class="headerlink" href="#multiprocessing" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>In order to actually make use of the extra cores present in nearly all modern consumer processors we can instead use the Multiprocessing library.</p></li>
+</ul>
+<p><strong>Advantages</strong></p>
+<ul class="simple">
+<li><p>The Multiprocessing library actually spawns multiple operating system processes for each parallel task.</p></li>
+<li><p>This nicely side-steps the GIL, by giving each process its own Python interpreter and thus own GIL.</p></li>
+<li><p>Hence each process can be fed to a separate processor core and then regrouped at the end once all processes have finished.</p></li>
+</ul>
+<p><strong>Drawbacks</strong></p>
+<ul class="simple">
+<li><p>Spawning extra processes introduces I/O overhead as data is having to be shuffled around between processors.</p></li>
+<li><p>This can add to the overall run-time.</p></li>
+<li><p>Assuming the data is restricted to each process, it is possible to gain significant speedup.</p></li>
+</ul>
+<p><strong>Of course, one must always be aware of Amdahl’s Law!</strong></p>
+<div class="section" id="cpu-heavy-computation-with-multithreading">
+<h2>CPU Heavy Computation with Multithreading<a class="headerlink" href="#cpu-heavy-computation-with-multithreading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The following code illustrates a multithreaded implementation for a “toy” code that sequentially adds numbers to lists. Each thread creates a new list and adds random numbers to it. This has been chosen as a toy example since it is CPU heavy.</p></li>
+<li><p>The following code will outline the interface for the Threading library but it will not grant us any additional speedup beyond that obtainable in a single-threaded implementation. When we come to use the Multiprocessing library below, we will see that it will significantly decrease the overall runtime.</p></li>
+</ul>
+<p>Let’s examine how the code works.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>Firstly we import the threading library.</p></li>
+<li><p>Then we create a function list_append that takes three parameters.</p></li>
+<li><p>The first, count, determines the size of the list to create.</p></li>
+<li><p>The second, id, is the ID of the “job” (which can be useful if we are writing debug info to the console).</p></li>
+<li><p>The third parameter, out_list, is the list to append the random numbers to.</p></li>
+<li><p>The __main__ function creates a size of  and uses two threads to carry out the work.</p></li>
+<li><p>It then creates a jobs list, which is used to store the separate threads.</p></li>
+<li><p>The threading.Thread object takes the list_append function as a parameter and then appends it to the jobs list.</p></li>
+<li><p>Finally, the jobs are sequentially started and then sequentially “joined”.</p></li>
+<li><p>The join() method blocks the calling thread (i.e. the main Python interpreter thread) until the thread has terminated.</p></li>
+</ol>
+<p><strong>This ensures that all of the threads are complete before printing the completion message to the console:</strong></p>
+<p><strong>Example</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># thread_test.py</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+
+
+<span class="k">def</span> <span class="nf">list_append</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">out_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates an empty list and then appends a</span>
+<span class="sd">    random number to the list &#39;count&#39; number</span>
+<span class="sd">    of times. A CPU-heavy operation!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+        <span class="n">out_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="mi">10000000</span>   <span class="c1"># Number of random numbers to add</span>
+    <span class="n">threads</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># Number of threads to create</span>
+
+    <span class="c1"># Create a list of jobs and then iterate through</span>
+    <span class="c1"># the number of threads appending each thread to</span>
+    <span class="c1"># the job list</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">threads</span><span class="p">):</span>
+        <span class="n">out_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="hll">        <span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">list_append</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">out_list</span><span class="p">))</span>
+</span>        <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span>
+
+    <span class="c1"># Start the threads (i.e. calculate the random number lists)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">:</span>
+<span class="hll">        <span class="n">j</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span>
+    <span class="c1"># Ensure all of the threads have finished</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">:</span>
+<span class="hll">        <span class="n">j</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List processing complete.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>We can time this code using the following console call:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="n">python</span> <span class="n">thread_test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">processing</span> <span class="n">complete</span><span class="o">.</span>
+
+<span class="n">real</span>    <span class="mi">0</span><span class="n">m2</span><span class="o">.</span><span class="mi">003</span><span class="n">s</span>
+<span class="n">user</span>    <span class="mi">0</span><span class="n">m1</span><span class="o">.</span><span class="mi">838</span><span class="n">s</span>
+<span class="n">sys</span>     <span class="mi">0</span><span class="n">m0</span><span class="o">.</span><span class="mi">161</span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cpu-heavy-computation-with-multiprocessing">
+<h2>CPU Heavy Computation with Multiprocessing<a class="headerlink" href="#cpu-heavy-computation-with-multiprocessing" title="Permalink to this headline">¶</a></h2>
+<p><strong>The only modifications needed for the Multiprocessing implementation include</strong>
+* Changing the import line
+* The functional form of the multiprocessing.Process line.</p>
+<p><strong>In this case the arguments to the target function are passed separately.</strong>
+Beyond that the code is almost identical to the Threading implementation above</p>
+<p><strong>Example</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># multiproc_test.py</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+
+<span class="k">def</span> <span class="nf">list_append</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">out_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates an empty list and then appends a</span>
+<span class="sd">    random number to the list &#39;count&#39; number</span>
+<span class="sd">    of times. A CPU-heavy operation!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+        <span class="n">out_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="mi">10000000</span>   <span class="c1"># Number of random numbers to add</span>
+    <span class="n">procs</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># Number of processes to create</span>
+
+    <span class="c1"># Create a list of jobs and then iterate through</span>
+    <span class="c1"># the number of processes appending each process to</span>
+    <span class="c1"># the job list</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">procs</span><span class="p">):</span>
+        <span class="n">out_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="n">process</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">list_append</span><span class="p">,</span>
+                                          <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">out_list</span><span class="p">))</span>
+        <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
+
+    <span class="c1"># Start the processes (i.e. calculate the random number lists)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">:</span>
+<span class="hll">        <span class="n">j</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span>
+    <span class="c1"># Ensure all of the processes have finished</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">:</span>
+<span class="hll">        <span class="n">j</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List processing complete.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>We can time this code using the following console call:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="n">python</span> <span class="n">multiproc_test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">processing</span> <span class="n">complete</span><span class="o">.</span>
+
+<span class="n">real</span>    <span class="mi">0</span><span class="n">m1</span><span class="o">.</span><span class="mi">045</span><span class="n">s</span>
+<span class="n">user</span>    <span class="mi">0</span><span class="n">m1</span><span class="o">.</span><span class="mi">824</span><span class="n">s</span>
+<span class="n">sys</span>     <span class="mi">0</span><span class="n">m0</span><span class="o">.</span><span class="mi">231</span><span class="n">s</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>In this case you can see that while the user and sys times have remained approximately the same,</p></li>
+<li><p>the real time has dropped by a factor of almost two. This makes sense since we’re using two processes.</p></li>
+</ul>
+<p><strong>we can scale to 4 processors</strong></p>
+<p><strong>Output:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">processing</span> <span class="n">complete</span><span class="o">.</span>
+
+<span class="n">real</span>    <span class="mi">0</span><span class="n">m0</span><span class="o">.</span><span class="mi">540</span><span class="n">s</span>
+<span class="n">user</span>    <span class="mi">0</span><span class="n">m1</span><span class="o">.</span><span class="mi">792</span><span class="n">s</span>
+<span class="n">sys</span>     <span class="mi">0</span><span class="n">m0</span><span class="o">.</span><span class="mi">269</span><span class="n">s</span>
+</pre></div>
+</div>
+<p><strong>This is an approximate 3.8x speed-up with four processes.</strong></p>
+</div>
+<div class="section" id="process-vs-pool-class">
+<h2>Process Vs Pool Class<a class="headerlink" href="#process-vs-pool-class" title="Permalink to this headline">¶</a></h2>
+<p><strong>Management</strong></p>
+<ul class="simple">
+<li><p>The Pool class is easier to use than the Process class because you do not have to manage the processes by yourself.</p></li>
+<li><p>It creates the processes, splits the input data, and returns the result in a list.</p></li>
+<li><p>It also waits for the workers to finish their tasks, i.e., you do not have to call the join() method explicitly.</p></li>
+</ul>
+<p><strong>Memory</strong></p>
+<ul class="simple">
+<li><p>While the Process keeps all the processes in the memory, the Pool keeps only those that are under execution.</p></li>
+<li><p>Therefore, if you have a large number of tasks, and if they have more data and take a lot of space too, then using process class might waste a lot of memory.</p></li>
+<li><p>The overhead of creating a Pool is more.</p></li>
+<li><p>Therefore, when there are a small number of tasks, and they are not repetitive, it is advisable to use a Process in this case.</p></li>
+</ul>
+<p><strong>I/O operations</strong></p>
+<ul class="simple">
+<li><p>Both the Process and the Pool class use FIFO (First In First Out) scheduler.</p></li>
+<li><p>if the current process is waiting for, or executing an I/O operation, then the Process class halts the current one and schedules another one from the task queue.</p></li>
+<li><p>The Pool class, on the other hand, waits for the process to complete its I/O operation, i.e., it does not schedule another one until the current has finished its execution.</p></li>
+<li><p>Because of this, the execution time might increase.</p></li>
+<li><p><strong>Process is preferred over Pool when your task is I/O bound</strong> (A program is I/O bound if it spends most of its time waiting for the I/O operation to complete).</p></li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>we create a file, write to it, and close it using the test() function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">starttime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">processlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="hll">    <span class="n">p1</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">test</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;sample1.txt&quot;</span><span class="p">,))</span>
+</span><span class="hll">    <span class="n">p2</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">test</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;sample2.txt&quot;</span><span class="p">,))</span>
+</span>    <span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">endtime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time taken </span><span class="si">{</span><span class="n">endtime</span><span class="o">-</span><span class="n">starttime</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">taken</span> <span class="mf">0.1002953052520752</span> <span class="n">seconds</span>
+</pre></div>
+</div>
+<p><strong>Let’s do the same using the Pool class.</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">starttime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">pool</span> <span class="o">=</span> <span class="n">Pool</span><span class="p">()</span>
+<span class="hll">    <span class="n">a</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;sample1.txt&quot;</span><span class="p">,))</span>
+</span><span class="hll">    <span class="n">b</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;sample2.txt&quot;</span><span class="p">,))</span>
+</span>    <span class="n">a</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+    <span class="n">endtime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time taken </span><span class="si">{</span><span class="n">endtime</span><span class="o">-</span><span class="n">starttime</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">taken</span> <span class="mf">0.1964569091796875</span> <span class="n">seconds</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="iterator.html" class="btn btn-neutral float-right" title="Iterators &amp; Generators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="multithreading.html" class="btn btn-neutral float-left" title="Multithreading" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Saurabh Jaiswal
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
